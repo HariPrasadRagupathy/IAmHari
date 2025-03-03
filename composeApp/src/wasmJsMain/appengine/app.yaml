@@ -1,0 +1,4 @@
+runtime: java21
+entrypoint: 'java -jar server-all.jar'
+network:
+  session_affinity: true
