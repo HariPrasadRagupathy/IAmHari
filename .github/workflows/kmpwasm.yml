@@ -36,7 +36,7 @@ jobs:
 
       # 4. Build the WasmJS App
       - name: "🛠️ Build WasmJS App"
-        run: gradle :IAmHari:composeApp[wasmJsBrowserDistribution]
+        run: gradle :composeApp:wasmJsBrowserDistribution
 
       # 5. Set up GitHub Pages
       - name: "📄 Configure GitHub Pages"
