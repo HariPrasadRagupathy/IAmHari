@@ -36,7 +36,7 @@ jobs:
 
       # 4. Build the WasmJS App
       - name: "🛠️ Build WasmJS App"
-        run: gradle :example:composeApp:wasmJsBrowserDistribution
+        run: gradle :IAmHari:composeApp:wasmJsBrowserDistribution
 
       # 5. Set up GitHub Pages
       - name: "📄 Configure GitHub Pages"
@@ -46,7 +46,7 @@ jobs:
       - name: "📤 Upload GitHub Pages artifact"
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./example/composeApp/build/dist/wasmJs/productionExecutable
+          path: ./IAmHari/composeApp/build/dist/wasmJs/productionExecutable
 
       # 7. Deploy to GitHub Pages
       - name: "🚀 Deploy to GitHub Pages"
