@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -58,6 +59,7 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.compose.jetpack.material2)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -67,10 +69,14 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
 
-            //implementation(libs.compose.jetpack.material3)
+            implementation(libs.androidx.navigation.compose)
 
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+
+            implementation(libs.kotlinx.serialization.json)
+
+            implementation(libs.compose.multiplatform.material3)
             implementation(projects.shared)
         }
         desktopMain.dependencies {
@@ -108,6 +114,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.navigation.runtime.ktx)
     debugImplementation(compose.uiTooling)
 }
 

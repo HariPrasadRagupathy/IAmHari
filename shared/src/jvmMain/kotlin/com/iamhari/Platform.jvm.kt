@@ -5,3 +5,6 @@ class JVMPlatform: Platform {
 }
 
 actual fun getPlatform(): Platform = JVMPlatform()
+actual fun getPlatformType(): PlatformType {
+    TODO("Not yet implemented")
+}
