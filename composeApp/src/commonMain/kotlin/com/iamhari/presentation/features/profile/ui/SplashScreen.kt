@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -20,17 +19,82 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.iamhari.data.enums.ScreenSize
+import com.iamhari.utiities.getScreenSizeCategory
 import iamhari.composeapp.generated.resources.Res
 import iamhari.composeapp.generated.resources.compose_multiplatform
+import iamhari.composeapp.generated.resources.dev_productivity
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+
+
 
 @Preview
 @Composable
 fun SplashScreen(navController: NavHostController) {
 
+
+
+
+    Text("Data ${getScreenSizeCategory()}")
+    when (getScreenSizeCategory()) {
+        ScreenSize.Compact -> CompactSplashScreen()
+        ScreenSize.Medium -> MediumSplashScreen()
+        ScreenSize.Expanded -> ExpandedSplashScreen()
+    }
+    //Text("Data1")
+}
+
+@Composable
+private fun CompactSplashScreen() {
+    // Small screen UI
+    val gradient = Brush.horizontalGradient(
+        colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
+    )
+    Box(
+        modifier = Modifier.fillMaxSize().background(brush = gradient),
+        contentAlignment = Alignment.Center
+    ) {
+        Card(modifier = Modifier.fillMaxSize().padding(50.dp)) {
+
+            Column(
+                modifier = Modifier.fillMaxSize().padding(20.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(painterResource(Res.drawable.dev_productivity), null,modifier = Modifier.padding(20.dp))
+                Spacer(modifier = Modifier.height(10.dp))
+                Text("I am", style = MaterialTheme.typography.h4)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text("Hari Prasad", style = MaterialTheme.typography.h3, textAlign = TextAlign.Center)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    "Senior Application Developer",
+                    style = MaterialTheme.typography.h5.copy(color = Color(0xFFc7c5c1)),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+        }
+
+
+    }
+}
+
+@Composable
+private fun MediumSplashScreen() {
+    // Tablet UI
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("Splash (Medium)")
+    }
+}
+
+@Composable
+private fun ExpandedSplashScreen() {
+    // Desktop/Wide UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
     )
@@ -45,26 +109,27 @@ fun SplashScreen(navController: NavHostController) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(
-                    modifier = Modifier.weight(1f).fillMaxSize(),
+                    modifier = Modifier.weight(1f).fillMaxSize().padding(10.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
 
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
+                    Image(painterResource(Res.drawable.dev_productivity), null)
 
                 }
                 Column(
-                    modifier = Modifier.weight(1f).fillMaxSize(),
+                    modifier = Modifier.weight(1f).fillMaxSize().padding(10.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text("I am", style = MaterialTheme.typography.h2)
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text("Hari Prasad", style = MaterialTheme.typography.h1)
+                    Text("Hari Prasad", style = MaterialTheme.typography.h1, textAlign = TextAlign.Center)
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         "Senior Application Developer",
-                        style = MaterialTheme.typography.h3.copy(color = Color(0xFF88c4ec))
+                        style = MaterialTheme.typography.h3.copy(color = Color(0xFFc7c5c1)),
+                        textAlign = TextAlign.Center
                     )
                 }
             }
