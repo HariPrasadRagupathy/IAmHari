@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -22,15 +21,50 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.iamhari.data.enums.ScreenSize
+import com.iamhari.utiities.getScreenSizeCategory
 import iamhari.composeapp.generated.resources.Res
 import iamhari.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
+
+
 @Preview
 @Composable
 fun SplashScreen(navController: NavHostController) {
 
+
+
+
+    Text("Data ${getScreenSizeCategory()}")
+    when (getScreenSizeCategory()) {
+        ScreenSize.Compact -> CompactSplashScreen()
+        ScreenSize.Medium -> MediumSplashScreen()
+        ScreenSize.Expanded -> ExpandedSplashScreen()
+    }
+    //Text("Data1")
+}
+
+@Composable
+private fun CompactSplashScreen() {
+    // Small screen UI
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("Splash (Compact)")
+    }
+}
+
+@Composable
+private fun MediumSplashScreen() {
+    // Tablet UI
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("Splash (Medium)")
+    }
+}
+
+@Composable
+private fun ExpandedSplashScreen() {
+    // Desktop/Wide UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
     )

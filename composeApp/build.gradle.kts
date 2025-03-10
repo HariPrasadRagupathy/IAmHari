@@ -77,6 +77,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
 
             implementation(libs.compose.multiplatform.material3)
+            implementation(libs.compose.crisban.material3.windowsize)
             implementation(projects.shared)
         }
         desktopMain.dependencies {
