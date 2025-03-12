@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.iamhari.data.enums.ScreenSize
+import com.iamhari.theme.LocalSpacing
 import com.iamhari.utiities.getScreenSizeCategory
 import iamhari.composeapp.generated.resources.Res
 import iamhari.composeapp.generated.resources.compose_multiplatform
@@ -50,6 +51,7 @@ fun SplashScreen(navController: NavHostController) {
 
 @Composable
 private fun CompactSplashScreen() {
+    val spacing = LocalSpacing.current
     // Small screen UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
@@ -58,7 +60,7 @@ private fun CompactSplashScreen() {
         modifier = Modifier.fillMaxSize().background(brush = gradient),
         contentAlignment = Alignment.Center
     ) {
-        Card(modifier = Modifier.fillMaxSize().padding(50.dp)) {
+        Card(modifier = Modifier.fillMaxSize().padding(spacing.XXL)) {
 
             Column(
                 modifier = Modifier.fillMaxSize().padding(20.dp),
@@ -87,13 +89,44 @@ private fun CompactSplashScreen() {
 @Composable
 private fun MediumSplashScreen() {
     // Tablet UI
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Splash (Medium)")
+    val spacing = LocalSpacing.current
+    // Small screen UI
+    val gradient = Brush.horizontalGradient(
+        colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
+    )
+    Box(
+        modifier = Modifier.fillMaxSize().background(brush = gradient),
+        contentAlignment = Alignment.Center
+    ) {
+        Card(modifier = Modifier.fillMaxSize().padding(spacing.XXL)) {
+
+            Column(
+                modifier = Modifier.fillMaxSize().padding(20.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(painterResource(Res.drawable.dev_productivity), null,modifier = Modifier.padding(20.dp))
+                Spacer(modifier = Modifier.height(10.dp))
+                Text("I am", style = MaterialTheme.typography.h4)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text("Hari Prasad", style = MaterialTheme.typography.h3, textAlign = TextAlign.Center)
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    "Senior Application Developer",
+                    style = MaterialTheme.typography.h5.copy(color = Color(0xFFc7c5c1)),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+        }
+
+
     }
 }
 
 @Composable
 private fun ExpandedSplashScreen() {
+    val spacing = LocalSpacing.current
     // Desktop/Wide UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
@@ -102,7 +135,7 @@ private fun ExpandedSplashScreen() {
         modifier = Modifier.fillMaxSize().background(brush = gradient),
         contentAlignment = Alignment.Center
     ) {
-        Card(modifier = Modifier.fillMaxSize().padding(50.dp)) {
+        Card(modifier = Modifier.fillMaxSize().padding(spacing.XXL)) {
             Row(
                 modifier = Modifier.fillMaxSize(),
                 horizontalArrangement = Arrangement.Center,
