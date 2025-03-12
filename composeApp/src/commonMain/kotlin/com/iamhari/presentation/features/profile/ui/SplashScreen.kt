@@ -99,23 +99,35 @@ private fun MediumSplashScreen() {
         contentAlignment = Alignment.Center
     ) {
         Card(modifier = Modifier.fillMaxSize().padding(spacing.XXL)) {
-
-            Column(
-                modifier = Modifier.fillMaxSize().padding(20.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+            Row(
+                modifier = Modifier.fillMaxSize(),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Image(painterResource(Res.drawable.dev_productivity), null,modifier = Modifier.padding(20.dp))
-                Spacer(modifier = Modifier.height(10.dp))
-                Text("I am", style = MaterialTheme.typography.h4)
-                Spacer(modifier = Modifier.height(10.dp))
-                Text("Hari Prasad", style = MaterialTheme.typography.h3, textAlign = TextAlign.Center)
-                Spacer(modifier = Modifier.height(10.dp))
-                Text(
-                    "Senior Application Developer",
-                    style = MaterialTheme.typography.h5.copy(color = Color(0xFFc7c5c1)),
-                    textAlign = TextAlign.Center
-                )
+                Column(
+                    modifier = Modifier.weight(1f).fillMaxSize().padding(10.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+
+                    Image(painterResource(Res.drawable.dev_productivity), null)
+
+                }
+                Column(
+                    modifier = Modifier.weight(1f).fillMaxSize().padding(10.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text("I am", style = MaterialTheme.typography.h2)
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Text("Hari Prasad", style = MaterialTheme.typography.h1, textAlign = TextAlign.Center)
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Text(
+                        "Senior Application Developer",
+                        style = MaterialTheme.typography.h3.copy(color = Color(0xFFc7c5c1)),
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
 
         }
