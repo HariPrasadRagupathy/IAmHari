@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.iamhari.data.enums.ScreenSize
+import com.iamhari.theme.LocalFontSize
 import com.iamhari.theme.LocalSpacing
 import com.iamhari.utiities.getScreenSizeCategory
 import iamhari.composeapp.generated.resources.Res
@@ -52,6 +53,7 @@ fun SplashScreen(navController: NavHostController) {
 @Composable
 private fun CompactSplashScreen() {
     val spacing = LocalSpacing.current
+    val fontSize = LocalFontSize.current
     // Small screen UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
@@ -71,7 +73,7 @@ private fun CompactSplashScreen() {
                 Spacer(modifier = Modifier.height(10.dp))
                 Text("I am", style = MaterialTheme.typography.h4)
                 Spacer(modifier = Modifier.height(10.dp))
-                Text("Hari Prasad", style = MaterialTheme.typography.h3, textAlign = TextAlign.Center)
+                Text("Hari Prasad", fontSize = fontSize.XXL, textAlign = TextAlign.Center)
                 Spacer(modifier = Modifier.height(10.dp))
                 Text(
                     "Senior Application Developer",
@@ -90,6 +92,7 @@ private fun CompactSplashScreen() {
 private fun MediumSplashScreen() {
     // Tablet UI
     val spacing = LocalSpacing.current
+    val fontSize = LocalFontSize.current
     // Small screen UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
@@ -120,7 +123,7 @@ private fun MediumSplashScreen() {
                 ) {
                     Text("I am", style = MaterialTheme.typography.h2)
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text("Hari Prasad", style = MaterialTheme.typography.h1, textAlign = TextAlign.Center)
+                    Text("Hari Prasad", fontSize = fontSize.XXL, textAlign = TextAlign.Center)
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         "Senior Application Developer",
@@ -139,6 +142,7 @@ private fun MediumSplashScreen() {
 @Composable
 private fun ExpandedSplashScreen() {
     val spacing = LocalSpacing.current
+    val fontSize = LocalFontSize.current
     // Desktop/Wide UI
     val gradient = Brush.horizontalGradient(
         colors = listOf(Color(0xFFB4D0F3), Color(0xFF88c4ec))
@@ -169,7 +173,7 @@ private fun ExpandedSplashScreen() {
                 ) {
                     Text("I am", style = MaterialTheme.typography.h2)
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text("Hari Prasad", style = MaterialTheme.typography.h1, textAlign = TextAlign.Center)
+                    Text("Hari Prasad", fontSize = fontSize.XXL, textAlign = TextAlign.Center)
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         "Senior Application Developer",

@@ -9,6 +9,8 @@ import androidx.compose.material3.Typography as Material3Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 
 object AppTypography {
     val titleLarge = TextStyle(fontSize = 28.sp, fontWeight = FontWeight.Bold)
@@ -40,3 +42,49 @@ val AppTypography = Typography(
     bodyMedium = TextStyle(fontSize = 16.sp),
     bodySmall = TextStyle(fontSize = 14.sp, color = TextSecondaryColor)
 )*/
+
+interface FontSize {
+    val XXS: TextUnit
+    val XS: TextUnit
+    val S: TextUnit
+    val M: TextUnit
+    val L: TextUnit
+    val XL: TextUnit
+    val XXL: TextUnit
+}
+
+object CompactFontSize : FontSize {
+    override val XXS = 6.sp
+    override val XS = 8.sp
+    override val S = 10.sp
+    override val M = 12.sp
+    override val L = 14.sp
+    override val XL = 16.sp
+    override val XXL = 18.sp
+}
+
+object MediumFontSize : FontSize {
+    override val XXS = 8.sp
+    override val XS = 10.sp
+    override val S = 12.sp
+    override val M = 14.sp
+    override val L = 16.sp
+    override val XL = 18.sp
+    override val XXL = 20.sp
+}
+
+object ExpandedFontSize : FontSize {
+    override val XXS = 10.sp
+    override val XS = 12.sp
+    override val S = 14.sp
+    override val M = 16.sp
+    override val L = 18.sp
+    override val XL = 20.sp
+    override val XXL = 22.sp
+}
+
+/*interface AppTypography{
+
+}*/
+
+
