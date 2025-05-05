@@ -44,7 +44,7 @@ fun AppNavController(
     navController: NavHostController = rememberNavController()
 ) {
 
-    NavHost(navController = navController, startDestination = SplashDestination.route) {
+    NavHost(navController = navController, startDestination = HomeDestination.route) {
         composable(SplashDestination.route) { SplashScreen(navController = navController) }
         composable(HomeDestination.route) { HomeScreen(navController = navController) }
 
