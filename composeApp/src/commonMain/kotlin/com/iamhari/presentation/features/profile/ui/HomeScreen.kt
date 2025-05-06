@@ -30,7 +30,7 @@ fun HomeScreen(navController: NavHostController) {
     var selectedTab by remember { mutableStateOf(tabs[0]) }
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
-    Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 20.dp)) {
+    Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 50.dp)) {
         TopMenuSection(tabs, onSelect = { selected ->
             selectedTab = selected
             coroutineScope.launch {

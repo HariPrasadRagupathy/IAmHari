@@ -13,6 +13,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,21 +31,15 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ProjectCard() {
-    Box(
-        modifier = Modifier.clip(
-            shape = RoundedCornerShape(10.dp),
-        ).border(
-            width = 1.dp,
-            shape = RoundedCornerShape(10.dp),
-            color = Color.LightGray
-        ).background(Color.White).padding(16.dp).width(400.dp).height(500.dp)
-    ) {
+    Card(colors = CardDefaults.cardColors(containerColor = Color.White), elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp)) {
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.padding(16.dp).width(400.dp).height(500.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text("Data" , style = TextStyle().copy(fontSize = 20.sp))
+
+            Spacer(modifier = Modifier.height(20.dp))
+            Text("Project Name" , style = TextStyle().copy(fontSize = 20.sp))
             Spacer(modifier = Modifier.height(20.dp))
             Row(
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
@@ -56,4 +53,15 @@ fun ProjectCard() {
             }
         }
     }
+    /*Box(
+        modifier = Modifier.clip(
+            shape = RoundedCornerShape(10.dp),
+        ).border(
+            width = 1.dp,
+            shape = RoundedCornerShape(10.dp),
+            color = Color.LightGray
+        ).background(Color.White).padding(16.dp).width(400.dp).height(500.dp)
+    ) {
+
+    }*/
 }
