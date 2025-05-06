@@ -20,27 +20,31 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Preview
 @Composable
-fun CandidateIntroduction() {
+fun CandidateIntroduction(
+    onContactClick : () -> Unit = {}
+) {
     Row(
         Modifier.fillMaxWidth().height(400.dp),
         horizontalArrangement = Arrangement.spacedBy(100.dp, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically
     ) {
         CandidateImage()
-        CandidateDetails()
+        CandidateDetails(onContactClick = {onContactClick()})
     }
 }
 
 @Preview
 @Composable
-private fun CandidateDetails() {
+private fun CandidateDetails(
+    onContactClick : () -> Unit = {}
+) {
     Column(verticalArrangement = Arrangement.spacedBy(10.dp,Alignment.CenterVertically), horizontalAlignment = Alignment.CenterHorizontally) {
         Text("Hello, I am", style = MaterialTheme.typography.headlineSmall)
         Text("Hari Prasad", style = MaterialTheme.typography.displayLarge)
         Text("Senior Application Developer", style = MaterialTheme.typography.bodyLarge)
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             OutlinedButton(onClick = {}) { Text("Download CV") }
-            Button(onClick = {}) { Text("Contact Info") }
+            Button(onClick = {onContactClick()}) { Text("Contact Info") }
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Icon(Icons.Default.Email, contentDescription = "")
