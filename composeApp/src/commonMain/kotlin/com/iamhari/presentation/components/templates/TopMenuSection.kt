@@ -1,4 +1,4 @@
-package com.iamhari.presentation.components
+package com.iamhari.presentation.components.templates
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
