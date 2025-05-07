@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.iamhari.App
 import com.iamhari.presentation.components.molecules.ProjectCard
+import com.iamhari.presentation.components.molecules.SkillCard
 import com.iamhari.presentation.components.templates.CandidateIntroduction
 
 
@@ -19,6 +20,15 @@ fun PreviewComponents(){
     Surface { Column(modifier = Modifier.background(MaterialTheme.colorScheme.onSurface)) {
         ProjectCard()
         CandidateIntroduction()
+        SkillCard()
+    } }
+}
+
+@Preview
+@Composable
+fun SkillComponents(){
+    Surface { Column(modifier = Modifier.background(MaterialTheme.colorScheme.onSurface)) {
+        SkillCard()
     } }
 }
 

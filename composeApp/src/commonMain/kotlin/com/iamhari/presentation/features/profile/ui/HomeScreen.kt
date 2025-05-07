@@ -14,11 +14,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.iamhari.data.Skill
 import com.iamhari.presentation.components.templates.AboutCandidate
 import com.iamhari.presentation.components.templates.CandidateIntroduction
 import com.iamhari.presentation.components.templates.ContactCandidate
 import com.iamhari.presentation.components.templates.ExperienceCandidate
 import com.iamhari.presentation.components.templates.ProjectsCandidate
+import com.iamhari.presentation.components.templates.SkillsCandidate
 import com.iamhari.presentation.components.templates.TopMenuSection
 import kotlinx.coroutines.launch
 
@@ -26,7 +28,17 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(navController: NavHostController) {
 
-    val tabs = listOf("Hari Prasad","About", "Experience", "Projects", "Contact")
+    val tabs = listOf("Hari Prasad", "About", "Skills", "Experience", "Projects", "Contact")
+    val skills = listOf(
+        Skill("Kotlin", "drawable/skills/kotlin.png"),
+        Skill("Jetpack Compose", "drawable/skills/jetpack_compose.png"),
+        Skill("Flutter", "drawable/skills/flutter.png"),
+        Skill("Dart", "drawable/skills/dart.png"),
+        Skill("Git", "drawable/skills/git.png"),
+        Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
+        Skill("Native Android", "https://picsum.photos/400/400")
+    )
+
     var selectedTab by remember { mutableStateOf(tabs[0]) }
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
@@ -49,6 +61,9 @@ fun HomeScreen(navController: NavHostController) {
             }
             item {
                 AboutCandidate()
+            }
+            item {
+                SkillsCandidate(skills)
             }
             item {
                 ExperienceCandidate()

@@ -52,7 +52,7 @@ private fun AboutCandidateDetails() {
 }
 
 @Composable
-fun YearTimeline(years: List<String>) {
+private fun YearTimeline(years: List<String>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
