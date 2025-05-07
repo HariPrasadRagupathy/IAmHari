@@ -26,6 +26,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil3.compose.AsyncImage
+import com.iamhari.presentation.components.templates.AboutCandidate
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -38,6 +40,7 @@ fun ProjectCard() {
             verticalArrangement = Arrangement.Center
         ) {
 
+            AsyncImage(model = "https://picsum.photos/400/400", contentDescription = "")
             Spacer(modifier = Modifier.height(20.dp))
             Text("Project Name" , style = TextStyle().copy(fontSize = 20.sp))
             Spacer(modifier = Modifier.height(20.dp))
