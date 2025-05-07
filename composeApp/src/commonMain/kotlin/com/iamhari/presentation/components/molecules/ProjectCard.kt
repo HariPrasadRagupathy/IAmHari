@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -23,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,20 +42,25 @@ fun ProjectCard() {
             verticalArrangement = Arrangement.Center
         ) {
 
-            AsyncImage(model = "https://picsum.photos/400/400", contentDescription = "")
+            Column(modifier = Modifier.fillMaxWidth().weight(0.7f), horizontalAlignment = Alignment.CenterHorizontally) {
+                AsyncImage(model = "https://picsum.photos/400/400", contentDescription = "", contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize()) }
+
             Spacer(modifier = Modifier.height(20.dp))
-            Text("Project Name" , style = TextStyle().copy(fontSize = 20.sp))
-            Spacer(modifier = Modifier.height(20.dp))
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                Button(
-                    onClick = {},
-                ){ Text("Github") }
-                OutlinedButton(
-                    onClick = {},
-                ){ Text("LiveDemo") }
+            Column(modifier = Modifier.fillMaxWidth().weight(0.3f), horizontalAlignment = Alignment.CenterHorizontally)  {
+                Text("Project Name" , style = TextStyle().copy(fontSize = 20.sp))
+                Spacer(modifier = Modifier.height(20.dp))
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Button(
+                        onClick = {},
+                    ){ Text("Github") }
+                    OutlinedButton(
+                        onClick = {},
+                    ){ Text("LiveDemo") }
+                }
             }
+
         }
     }
     /*Box(
