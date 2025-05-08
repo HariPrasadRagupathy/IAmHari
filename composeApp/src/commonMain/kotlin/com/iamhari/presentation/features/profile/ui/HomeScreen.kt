@@ -1,5 +1,6 @@
 package com.iamhari.presentation.features.profile.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -50,7 +51,7 @@ fun HomeScreen(navController: NavHostController) {
             }
         }
         )
-        LazyColumn(state = listState) {
+        LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(30.dp)) {
             item {
                 CandidateIntroduction(onContactClick = {
                     selectedTab = tabs[4]
