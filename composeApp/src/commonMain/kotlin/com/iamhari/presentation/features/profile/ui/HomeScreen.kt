@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.iamhari.data.ProjectWorked
 import com.iamhari.data.Skill
 import com.iamhari.presentation.components.templates.AboutCandidate
 import com.iamhari.presentation.components.templates.CandidateIntroduction
@@ -38,6 +39,14 @@ fun HomeScreen(navController: NavHostController) {
         Skill("Git", "drawable/skills/git.png"),
         Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
         Skill("Native Android", "https://picsum.photos/400/400")
+    )
+    val projectWorked = listOf(
+        ProjectWorked("Jio Design System", "Jio", "",listOf("Kotlin", "Jetpack Compose", "Git")),
+        ProjectWorked("Jio Design System", "Jio", "A resource-sharing app based on skills and locations,\n" +
+                "recommended\n" +
+                " by trusted networks. Allows sharing and finding contact\n" +
+                "details of known\n" +
+                " resources like electricians and plumbers.",listOf("Kotlin", "Jetpack Compose", "Git"))
     )
 
     var selectedTab by remember { mutableStateOf(tabs[0]) }
@@ -70,7 +79,7 @@ fun HomeScreen(navController: NavHostController) {
                 ExperienceCandidate()
             }
             item {
-                ProjectsCandidate()
+                ProjectsCandidate(projectWorked)
             }
             item {
                 ContactCandidate()
