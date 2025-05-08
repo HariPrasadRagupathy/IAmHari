@@ -19,6 +19,7 @@ import com.iamhari.data.enums.ScreenSize
 import com.iamhari.getPlatformType
 
 val LocalSpacing = compositionLocalOf<Spacing> { MediumSpacing } // Default value
+val LocalFontSize = compositionLocalOf<FontSize> { MediumFontSize } // Default value
 
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -55,11 +56,19 @@ fun PortfolioTheme(
         else -> MediumSpacing
     }
 
+    val fontSize : FontSize = when(windowSizeClass.widthSizeClass){
+        WindowWidthSizeClass.Compact -> CompactFontSize
+        WindowWidthSizeClass.Medium -> MediumFontSize
+        WindowWidthSizeClass.Expanded -> ExpandedFontSize
+        else -> MediumFontSize
+    }
+
 
 
 
     CompositionLocalProvider(
-        LocalSpacing provides spacing
+        LocalSpacing provides spacing,
+        LocalFontSize provides fontSize
     ) {
         if (getPlatformType() == PlatformType.Web) {
             MaterialTheme(

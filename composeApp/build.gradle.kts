@@ -79,6 +79,11 @@ kotlin {
             implementation(libs.compose.multiplatform.material3)
             implementation(libs.compose.crisban.material3.windowsize)
             implementation(projects.shared)
+
+            //Coil Version
+            implementation(project.dependencies.platform(libs.coil.bom))
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
