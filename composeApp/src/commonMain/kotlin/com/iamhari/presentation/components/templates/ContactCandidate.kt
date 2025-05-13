@@ -1,5 +1,6 @@
 package com.iamhari.presentation.components.templates
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.ModalDrawer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
@@ -25,6 +27,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.iamhari.presentation.components.molecules.BottomCard
+import com.iamhari.presentation.components.molecules.ContactCard
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -32,7 +36,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 fun ContactCandidate() {
     Column(
-        Modifier.fillMaxWidth().height(400.dp).padding(vertical = 10.dp),
+        Modifier.fillMaxWidth().background(Color(0xFF4287F5))
+            .padding(vertical = 10.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -40,61 +45,75 @@ fun ContactCandidate() {
         Text(
             "Contact",
             style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.Bold)
+
         )
-        Spacer(modifier = Modifier.height(10.dp))
-        AboutCandidateDetails()
+
+        Row(modifier = Modifier.padding(vertical = 100.dp)) {
+            Column(modifier = Modifier.weight(0.5f)) { ContactText() }
+            Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
+        }
+        BottomCard()
+
+
+    }
+}
+
+@Composable
+private fun ContactText() {
+    Column(modifier = Modifier.padding(horizontal = 30.dp)) {
+        Text(
+            "Let Us Connect",
+            style = MaterialTheme.typography.displayMedium.copy(
+                fontWeight = FontWeight.Bold
+            )
+        )
+        Spacer(modifier = Modifier.height(30.dp))
+        Text(
+            "\"I'm always open to working on new projects and design challenges. Feel free to share as many details as you can so we can start off strong. Kindly reach out if you're interested in collaborating!\"\n" +
+                    "\n",
+            style = MaterialTheme.typography.headlineSmall.copy(
+            )
+        )
+
     }
 }
 
 @Composable
 private fun AboutCandidateDetails() {
-    OutlinedCard(
-        modifier = Modifier.fillMaxWidth().padding(vertical = 20.dp),
-        colors = CardDefaults.cardColors().copy(containerColor = Color.White)
+
+    Column(
+        Modifier.padding(10.dp).fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column(
-            Modifier.padding(10.dp).fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            OutlinedButton(onClick = {}) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Icon(Icons.Default.Phone, contentDescription = "")
-                    Text("+91 8861099488")
-                }
-            }
+        ContactCard(
+            modifier = Modifier,
+            iconUri = "drawable/whatsapp.png",
+            contentHeading = "WhatsApp",
+            content = "(+91) 88610-99488",
+            onClick = { }
+        )
+        ContactCard(
+            modifier = Modifier,
+            iconUri = "drawable/call.png",
+            contentHeading = "Phone",
+            content = "(+91) 88610-99488",
+            onClick = { }
+        )
+        ContactCard(
+            modifier = Modifier,
+            iconUri = "drawable/gmail.png",
+            contentHeading = "Gmail",
+            content = "hariprasadragupathy@gmail.com",
+            onClick = { }
+        )
+        ContactCard(
+            modifier = Modifier,
+            iconUri = "drawable/linkedIn.png",
+            contentHeading = "LinkedIn",
+            content = "www.linkedin.com/in/hariprasadragupathy",
+            onClick = { }
+        )
 
-
-            OutlinedButton(onClick = {}) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Icon(Icons.Default.Email, contentDescription = "")
-                    Text("hariprasadragupathy@gmail.com")
-                }
-            }
-            OutlinedButton(onClick = {}) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Icon(Icons.Default.Home, contentDescription = "")
-                    Text("WhatsApp")
-                }
-            }
-            OutlinedButton(onClick = {}) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Icon(Icons.Default.ThumbUp, contentDescription = "")
-                    Text("www.linkedin.com/in/hariprasadragupathy")
-                }
-            }
-        }
     }
 }
