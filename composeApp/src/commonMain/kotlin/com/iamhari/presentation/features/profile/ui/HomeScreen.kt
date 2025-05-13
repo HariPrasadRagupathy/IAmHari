@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.iamhari.data.ProjectWorked
 import com.iamhari.data.Skill
+import com.iamhari.presentation.components.molecules.BottomCard
 import com.iamhari.presentation.components.templates.AboutCandidate
 import com.iamhari.presentation.components.templates.CandidateIntroduction
 import com.iamhari.presentation.components.templates.ContactCandidate
@@ -84,7 +85,9 @@ fun HomeScreen(navController: NavHostController) {
             item {
                 ContactCandidate()
             }
+
         }
+        BottomCard()
     }
 
 

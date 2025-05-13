@@ -9,9 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.iamhari.data.ProjectWorked
+import com.iamhari.presentation.components.molecules.ContactCard
 import com.iamhari.presentation.components.molecules.ProjectCard
 import com.iamhari.presentation.components.molecules.SkillCard
 import com.iamhari.presentation.components.templates.CandidateIntroduction
+import com.iamhari.presentation.components.templates.ContactCandidate
 
 
 /*@Preview
@@ -34,7 +36,7 @@ fun SkillComponents(){
 
 
 
-@Preview
+/*@Preview
 @Composable
 fun JobComponent() {
     Surface {
@@ -51,5 +53,16 @@ categorizing elements into atoms, molecules, organisms, and templates for modula
 
         }
     }
-}
+}*/
+
+/*@Preview
+@Composable
+fun Contact() {
+    Surface {
+        Column(modifier = Modifier.background(MaterialTheme.colorScheme.onSurface)) {
+            ContactCard()
+
+        }
+    }
+}*/
 
