@@ -5,12 +5,35 @@ package com.iamhari.theme
 
 
 import androidx.compose.material.Typography
+import androidx.compose.runtime.Composable
 import androidx.compose.material3.Typography as Material3Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
+import org.jetbrains.compose.resources.Font
+import iamhari.composeapp.generated.resources.poppins
+import iamhari.composeapp.generated.resources.Res
+import iamhari.composeapp.generated.resources.*
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.Font
+
+object AppFonts{
+
+    @OptIn(ExperimentalResourceApi::class)
+    @Composable
+    fun PoppinsFontFamily() = FontFamily(
+
+        Font(Res.font.Poppins_Thin, weight = FontWeight.Light),
+        Font(Res.font.Poppins_Regular, weight = FontWeight.Normal),
+        Font(Res.font.Poppins_Medium, weight = FontWeight.Medium),
+       // Font(Res.font.Poppins_Bold, weight = FontWeight.SemiBold),
+        Font(Res.font.Poppins_Bold, weight = FontWeight.Bold),
+        Font(Res.font.Poppins_Thin, weight = FontWeight.Thin))
+
+}
 
 object AppTypography {
     val titleLarge = TextStyle(fontSize = 28.sp, fontWeight = FontWeight.Bold)

@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavHostController) {
     var selectedTab by remember { mutableStateOf(tabs[0]) }
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
-    Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 50.dp)) {
+    Column(modifier = Modifier.fillMaxWidth()) {
         TopMenuSection(tabs, onSelect = { selected ->
             selectedTab = selected
             coroutineScope.launch {
@@ -63,9 +63,9 @@ fun HomeScreen(navController: NavHostController) {
         LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(30.dp)) {
             item {
                 CandidateIntroduction(onContactClick = {
-                    selectedTab = tabs[4]
+                    selectedTab = tabs[5]
                     coroutineScope.launch {
-                        listState.animateScrollToItem(index = 4)
+                        listState.animateScrollToItem(index = 5)
                     }
                 })
             }
