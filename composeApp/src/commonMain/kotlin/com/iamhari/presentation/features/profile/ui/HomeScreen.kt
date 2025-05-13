@@ -63,9 +63,9 @@ fun HomeScreen(navController: NavHostController) {
         LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(30.dp)) {
             item {
                 CandidateIntroduction(onContactClick = {
-                    selectedTab = tabs[4]
+                    selectedTab = tabs[5]
                     coroutineScope.launch {
-                        listState.animateScrollToItem(index = 4)
+                        listState.animateScrollToItem(index = 5)
                     }
                 })
             }

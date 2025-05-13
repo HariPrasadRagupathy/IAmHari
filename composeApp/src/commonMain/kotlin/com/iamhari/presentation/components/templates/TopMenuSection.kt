@@ -37,6 +37,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.iamhari.presentation.components.molecules.FullDialog
 import com.iamhari.theme.AppFonts
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -46,6 +47,19 @@ fun TopMenuSection(
     onSelect: ((String) -> Unit) = {}
 ) {
     var selectedTab by remember { mutableStateOf(tabs[0]) }
+    var showDialog by remember { mutableStateOf(false) }
+
+    FullDialog(
+        showDialogue = showDialog,
+        menuItems = tabs,
+        onItemClick = {
+            onSelect(it)
+            selectedTab = it
+            showDialog = false
+        },
+        currentSelectedItem = selectedTab,
+        onDismiss = { },
+        onDismissRequest = { showDialog = false })
 
     Surface {
         Row(
@@ -93,13 +107,16 @@ fun TopMenuSection(
                         )
                     )
                 }
-                IconButton(onClick = {}) {
+                IconButton(onClick = {
+                    showDialog = true
+                }) {
                     Icon(
                         Icons.Default.Menu,
                         contentDescription = "",
                         modifier = Modifier.size(30.dp)
                     )
                 }
+
 
             }
 

@@ -49,6 +49,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.iamhari.presentation.components.molecules.TypewriterText
 import com.iamhari.theme.AppFonts
 import iamhari.composeapp.generated.resources.Res
 import io.ktor.http.CacheControl
@@ -98,10 +99,7 @@ private fun CandidateDetails(
             "Expert In",
             style = MaterialTheme.typography.headlineSmall.copy(fontFamily = AppFonts.PoppinsFontFamily())
         )
-        Text(
-            "Jetpack Compose",
-            style = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily())
-        )
+        TypewriterText(listOf("Jetpack Compose", "Kotlin", "Native Android","Kotlin-MultiPlatform", "Git"))
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             OutlinedButton(
                 border = BorderStroke(1.dp, Color.White),
@@ -111,11 +109,13 @@ private fun CandidateDetails(
             Button(
                 onClick = { onContactClick() },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
-            ) { Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
+            ) {
+                Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
 
-                Text("Contact Info")
-                Icon(Icons.Default.ArrowDropDown, contentDescription = "",tint = Color.White)
-            } }
+                    Text("Contact Info")
+                    Icon(Icons.Default.ArrowDropDown, contentDescription = "", tint = Color.White)
+                }
+            }
         }
 
     }
