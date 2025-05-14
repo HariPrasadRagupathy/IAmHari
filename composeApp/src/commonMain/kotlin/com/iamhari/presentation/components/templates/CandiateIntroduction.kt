@@ -99,7 +99,7 @@ private fun CandidateDetails(
             "Expert In",
             style = MaterialTheme.typography.headlineSmall.copy(fontFamily = AppFonts.PoppinsFontFamily())
         )
-        TypewriterText(listOf("Jetpack Compose", "Kotlin", "Native Android","Kotlin-MultiPlatform", "Git"))
+        TypewriterText(listOf("Jetpack Compose", "Kotlin", "Native Android","Kotlin MultiPlatform","Compose MultiPlatform", "Git"))
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             OutlinedButton(
                 border = BorderStroke(1.dp, Color.White),

@@ -17,6 +17,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,11 +27,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.iamhari.data.Skill
 import com.iamhari.presentation.components.templates.AboutCandidate
+import com.iamhari.theme.AppFonts
 import iamhari.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -57,7 +60,7 @@ fun SkillCard(skill: Skill) {
                     AsyncImage(
                         model = Res.getUri(skill.url),
                         contentDescription = "",
-                        contentScale = ContentScale.Crop,
+                        contentScale = ContentScale.Fit,
                         modifier = Modifier.fillMaxSize()
                     )
                 else
@@ -70,7 +73,7 @@ fun SkillCard(skill: Skill) {
             }
 
             Spacer(modifier = Modifier.height(20.dp))
-            Text(skill.skillName)
+            Text(skill.skillName, fontFamily = AppFonts.PoppinsFontFamily(), fontWeight = FontWeight.Bold)
 
 
         }

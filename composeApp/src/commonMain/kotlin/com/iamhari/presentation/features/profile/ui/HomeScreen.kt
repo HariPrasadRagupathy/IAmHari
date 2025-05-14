@@ -35,11 +35,15 @@ fun HomeScreen(navController: NavHostController) {
     val skills = listOf(
         Skill("Kotlin", "drawable/skills/kotlin.png"),
         Skill("Jetpack Compose", "drawable/skills/jetpack_compose.png"),
-        Skill("Flutter", "drawable/skills/flutter.png"),
-        Skill("Dart", "drawable/skills/dart.png"),
-        Skill("Git", "drawable/skills/git.png"),
         Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
-        Skill("Native Android", "https://picsum.photos/400/400")
+        Skill("Compose Multiplatform", "drawable/skills/cmp.png"),
+        Skill("Native Android", "drawable/skills/android.png"),
+        Skill("Ktor", "drawable/skills/ktor.png"),
+        Skill("Flutter", "drawable/skills/flutter.png"),
+        Skill("Dart", "drawable/skills/dart.jpeg"),
+        Skill("Git", "drawable/skills/git.png"),
+        Skill("GitHub", "drawable/skills/github.jpeg"),
+
     )
     val projectWorked = listOf(
         ProjectWorked("Jio Design System", "Jio", "",listOf("Kotlin", "Jetpack Compose", "Git")),

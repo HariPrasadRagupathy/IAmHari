@@ -1,19 +1,10 @@
 package com.iamhari.previews
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.iamhari.data.ProjectWorked
-import com.iamhari.presentation.components.molecules.ContactCard
-import com.iamhari.presentation.components.molecules.ProjectCard
-import com.iamhari.presentation.components.molecules.SkillCard
-import com.iamhari.presentation.components.templates.CandidateIntroduction
-import com.iamhari.presentation.components.templates.ContactCandidate
+import com.iamhari.presentation.components.molecules.YearsOfExperience
 
 
 /*@Preview
@@ -65,4 +56,12 @@ fun Contact() {
         }
     }
 }*/
+
+@Preview
+@Composable
+fun YearsOfExperiencePreview() {
+    Surface {
+    YearsOfExperience(modifier = Modifier, yearsText = "15", bottomText = "Years Of Experience")
+    }
+}
 

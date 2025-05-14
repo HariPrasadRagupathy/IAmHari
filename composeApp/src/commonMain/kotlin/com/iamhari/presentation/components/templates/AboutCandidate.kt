@@ -26,6 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.iamhari.presentation.components.molecules.YearsOfExperience
+import com.iamhari.theme.AppFonts
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -48,13 +50,14 @@ fun AboutCandidate() {
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun AboutCandidateDetails() {
-    Card(modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp), elevation = CardDefaults.elevatedCardElevation(defaultElevation = 3.dp), colors = CardDefaults.cardColors(containerColor = Color.White)) {
-        FlowRow {
-            Text("Senior Mobile Application Developer with 10+ years of experience in mobile application development, contributing to a total of 14+ years in IT programming technologies. Proficient in developing mobile applications using Kotlin, Jetpack Compose, Flutter, and Dart. Experienced in creating and customizing UI components through a Design System, interpreting REST APIs, ensuring security, and integrating local databases for data persistence. Skilled in managing applications with a well-defined layered architecture and proficient in Git and CI/CD tools. Committed to clean code practices and delivering innovative mobile applications.",
-                style = TextStyle.Default.copy(fontStyle = FontStyle.Italic, fontSize = 18.sp, lineHeight = 30.sp),
-                modifier = Modifier.background(Color.White).padding(40.dp).weight(0.6f).align(Alignment.CenterVertically))
-            AsyncImage(model = "https://picsum.photos/id/9/400/400", contentDescription = "", contentScale = ContentScale.Crop, modifier = Modifier.size(400.dp).padding(20.dp))
+
+        FlowRow(modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp)) {
+            Text("Senior Mobile Application Developer with 10+ years of experience in mobile application development, contributing to a total of 15+ years in IT programming technologies. Proficient in developing mobile applications using Kotlin, Jetpack Compose, Flutter, and Dart. Experienced in creating and customizing UI components through a Design System, interpreting REST APIs, ensuring security, and integrating local databases for data persistence. Skilled in managing applications with a well-defined layered architecture and proficient in Git and CI/CD tools. Committed to clean code practices and delivering innovative mobile applications.",
+                style = TextStyle.Default.copy( fontSize = 18.sp, lineHeight = 40.sp, fontFamily = AppFonts.PoppinsFontFamily()),
+                modifier = Modifier.background(Color.White).padding(40.dp).weight(0.7f).align(Alignment.CenterVertically))
+            //AsyncImage(model = "https://picsum.photos/id/9/400/400", contentDescription = "", contentScale = ContentScale.Crop, modifier = Modifier.size(400.dp).padding(20.dp))
+            YearsOfExperience(modifier = Modifier.weight(0.3f), yearsText = "15", bottomText = "Years Of Experience")
         }
-    }
+
 
 }
