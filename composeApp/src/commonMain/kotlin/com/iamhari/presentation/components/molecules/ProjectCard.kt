@@ -58,14 +58,7 @@ fun ProjectCard(projectWorked: ProjectWorked) {
 
             Column(
                 modifier = Modifier.fillMaxWidth().weight(0.2f).background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            Color(0xFFFF5733), // Hex: #FF5733 (Orange-ish)
-                            Color(0xFF33C1FF)  // Hex: #33C1FF (Light Blue)
-                        ),
-                        start = Offset(0f, 0f),
-                        end = Offset.Infinite
-                    )
+                    Color(0xFF4287F5)
                 ),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
