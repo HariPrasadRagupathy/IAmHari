@@ -1,9 +1,14 @@
 package com.iamhari.previews
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Surface
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.iamhari.presentation.components.molecules.TimeLineItem
 import com.iamhari.presentation.components.molecules.YearsOfExperience
 
 
@@ -57,11 +62,41 @@ fun Contact() {
     }
 }*/
 
-@Preview
+/*@Preview
 @Composable
 fun YearsOfExperiencePreview() {
     Surface {
     YearsOfExperience(modifier = Modifier, yearsText = "15", bottomText = "Years Of Experience")
+    }
+}*/
+
+@Preview
+@Composable
+fun TimeLineItemPreview() {
+    Surface {
+        Column {
+            TimeLineItem(
+                year = "2023-2025",
+                title = "Senior Application Developer",
+                companyOrSchool = "Teksoft",
+                description = """The data is the 
+                    |data
+                    |ff
+                    |df""".trimMargin(),
+                icon = Icons.Default.MailOutline,
+
+                )
+            repeat(5) {
+                TimeLineItem(
+                    year = "2023-2025",
+                    title = "Senior Application Developer",
+                    companyOrSchool = "Teksoft",
+                    description = "The data is the data",
+                    icon = Icons.Default.MailOutline,
+
+                    )
+            }
+        }
     }
 }
 
