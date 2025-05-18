@@ -1,17 +1,22 @@
 package com.iamhari.presentation.features.profile.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.iamhari.data.models.ProjectWorked
@@ -44,7 +49,7 @@ fun HomeScreen(navController: NavHostController) {
         Skill("Git", "drawable/skills/git.png"),
         Skill("GitHub", "drawable/skills/github.jpeg"),
 
-    )
+        )
 
 
     var selectedTab by remember { mutableStateOf(tabs[0]) }

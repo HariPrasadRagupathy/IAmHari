@@ -37,7 +37,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ContactCandidate() {
     Column(
         Modifier.fillMaxWidth().background(Color(0xFF4287F5))
-            .padding(vertical = 10.dp),
+            .padding(vertical = 30.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
