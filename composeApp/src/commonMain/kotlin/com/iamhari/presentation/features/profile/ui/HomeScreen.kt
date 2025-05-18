@@ -1,22 +1,27 @@
 package com.iamhari.presentation.features.profile.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.iamhari.data.ProjectWorked
-import com.iamhari.data.Skill
+import com.iamhari.data.models.ProjectWorked
+import com.iamhari.data.models.Skill
+import com.iamhari.data.providers.local.constants.StaticData
 import com.iamhari.presentation.components.molecules.BottomCard
 import com.iamhari.presentation.components.templates.AboutCandidate
 import com.iamhari.presentation.components.templates.CandidateIntroduction
@@ -44,15 +49,8 @@ fun HomeScreen(navController: NavHostController) {
         Skill("Git", "drawable/skills/git.png"),
         Skill("GitHub", "drawable/skills/github.jpeg"),
 
-    )
-    val projectWorked = listOf(
-        ProjectWorked("Jio Design System", "Jio", "",listOf("Kotlin", "Jetpack Compose", "Git")),
-        ProjectWorked("Jio Design System", "Jio", "A resource-sharing app based on skills and locations,\n" +
-                "recommended\n" +
-                " by trusted networks. Allows sharing and finding contact\n" +
-                "details of known\n" +
-                " resources like electricians and plumbers.",listOf("Kotlin", "Jetpack Compose", "Git"))
-    )
+        )
+
 
     var selectedTab by remember { mutableStateOf(tabs[0]) }
     val listState = rememberLazyListState()
@@ -81,10 +79,10 @@ fun HomeScreen(navController: NavHostController) {
                 SkillsCandidate(skills)
             }
             item {
-                ExperienceCandidate()
+                ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
             }
             item {
-                ProjectsCandidate(projectWorked)
+                ProjectsCandidate(StaticData.projectWorked)
             }
             item {
                 ContactCandidate()

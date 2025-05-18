@@ -1,4 +1,4 @@
-package com.iamhari.data
+package com.iamhari.data.models
 
 data class Skill(
     val skillName: String = "",
