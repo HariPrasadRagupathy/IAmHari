@@ -76,10 +76,10 @@ fun TopMenuSection(
                     onSelect.invoke(tabs[0])
                 })
 
-            FlowRow(
+            Row(
                 modifier = Modifier.height(50.dp),
-                verticalArrangement = Arrangement.Bottom,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(20.dp)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,

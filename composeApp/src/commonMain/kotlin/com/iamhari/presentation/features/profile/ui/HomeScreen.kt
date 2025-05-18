@@ -63,7 +63,7 @@ fun HomeScreen(navController: NavHostController) {
             }
         }
         )
-        LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(30.dp)) {
+        LazyColumn(state = listState) {
             item {
                 CandidateIntroduction(onContactClick = {
                     selectedTab = tabs[5]
@@ -87,9 +87,10 @@ fun HomeScreen(navController: NavHostController) {
             item {
                 ContactCandidate()
             }
+            item { BottomCard() }
 
         }
-        BottomCard()
+
     }
 
 

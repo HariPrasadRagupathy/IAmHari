@@ -52,7 +52,6 @@ fun ContactCandidate() {
             Column(modifier = Modifier.weight(0.5f)) { ContactText() }
             Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
         }
-        BottomCard()
 
 
     }
