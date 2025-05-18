@@ -87,9 +87,10 @@ fun HomeScreen(navController: NavHostController) {
             item {
                 ContactCandidate()
             }
+            item { BottomCard() }
 
         }
-        BottomCard()
+
     }
 
 
