@@ -15,7 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.iamhari.data.ProjectWorked
+import com.iamhari.data.models.ProjectWorked
 import com.iamhari.presentation.components.molecules.ProjectCard
 import org.jetbrains.compose.ui.tooling.preview.Preview
 

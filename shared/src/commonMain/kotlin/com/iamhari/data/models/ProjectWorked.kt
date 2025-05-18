@@ -1,6 +1,4 @@
-package com.iamhari.data
-
-
+package com.iamhari.data.models
 
 data class ProjectWorked(
     val projectName: String = "",

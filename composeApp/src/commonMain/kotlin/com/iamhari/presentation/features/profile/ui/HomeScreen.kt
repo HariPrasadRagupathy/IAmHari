@@ -3,7 +3,6 @@ package com.iamhari.presentation.features.profile.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
@@ -15,8 +14,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.iamhari.data.ProjectWorked
-import com.iamhari.data.Skill
+import com.iamhari.data.models.ProjectWorked
+import com.iamhari.data.models.Skill
+import com.iamhari.data.providers.local.constants.StaticData
 import com.iamhari.presentation.components.molecules.BottomCard
 import com.iamhari.presentation.components.templates.AboutCandidate
 import com.iamhari.presentation.components.templates.CandidateIntroduction
@@ -81,7 +81,7 @@ fun HomeScreen(navController: NavHostController) {
                 SkillsCandidate(skills)
             }
             item {
-                ExperienceCandidate()
+                ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
             }
             item {
                 ProjectsCandidate(projectWorked)

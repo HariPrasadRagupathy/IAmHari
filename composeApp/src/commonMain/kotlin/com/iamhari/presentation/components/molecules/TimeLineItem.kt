@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -33,12 +34,16 @@ fun TimeLineItem(
     companyOrSchool: String,
     description: String,
     icon: ImageVector,
-    iconBackground: Color = Color(0xFFFFC107), // Yellow
+    iconBackground: Color = Color(0xFF4287F5),
     showLineAbove: Boolean = false,
     showLineBelow: Boolean = true
 ) {
 
-    Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.Top) {
+    Row(
+        modifier = Modifier.padding(horizontal = 30.dp,vertical = 10.dp).fillMaxWidth(),
+        verticalAlignment = Alignment.Top,
+        horizontalArrangement = Arrangement.Start
+    ) {
         Box(
             modifier = Modifier
                 .width(40.dp)
@@ -48,7 +53,7 @@ fun TimeLineItem(
 
                     if (showLineAbove) {
                         drawLine(
-                            color = Color(0xFFFFC107),
+                            color = Color(0xFF4287F5),
                             start = Offset(centerX, 0f),
                             end = Offset(centerX, -size.height / 2),
                             strokeWidth = 4f
@@ -57,7 +62,7 @@ fun TimeLineItem(
 
                     if (showLineBelow) {
                         drawLine(
-                            color = Color(0xFFFFC107),
+                            color = Color(0xFF4287F5),
                             start = Offset(centerX, 0f + iconRadius),
                             end = Offset(centerX, size.height),
                             strokeWidth = 4f
@@ -74,7 +79,10 @@ fun TimeLineItem(
                 Icon(icon, null, tint = Color.White)
             }
         }
-        Column(modifier = Modifier.padding(horizontal = 20.dp), verticalArrangement = Arrangement.Top) {
+        Column(
+            modifier = Modifier.padding(horizontal = 20.dp),
+            verticalArrangement = Arrangement.Top
+        ) {
             Text(year, color = Color.LightGray, fontSize = 12.sp, fontWeight = FontWeight.Bold)
             Text(title, fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color.Black)
             Text(companyOrSchool, color = Color.Gray, fontWeight = FontWeight.Medium)
