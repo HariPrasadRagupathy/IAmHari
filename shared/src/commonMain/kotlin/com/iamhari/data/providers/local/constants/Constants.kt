@@ -1,5 +1,6 @@
 package com.iamhari.data.providers.local.constants
 
+import com.iamhari.data.models.ProjectWorked
 import com.iamhari.data.models.WorkExperience
 
 object StaticData {
@@ -50,6 +51,38 @@ object StaticData {
             ventureName = "Sri Krishna College of Engineering and Technology",
             description = "Studied integerated course with Bsc and Msc in Software Engineering"
         )
+    )
+
+    val projectWorked = listOf(
+        ProjectWorked(
+            projectName = "App / Component Development",
+            clientName = "Jio",
+            shortDescription = "Design System for Applications",
+            imageUrl = "drawable/projects/projectShowcase1.jpg",
+            techStack = listOf("Kotlin", "Jetpack Compose", "Git")
+        ),
+        ProjectWorked(
+            projectName = "App Development",
+            clientName = "Clearone",
+            shortDescription = "Remote Controller for Video App",
+            imageUrl = "drawable/projects/projectShowcase2.jpg",
+            techStack = listOf("Kotlin", "Jetpack Compose", "Git")
+        ),
+        ProjectWorked(
+            projectName = "App Development",
+            clientName = "Geodexia",
+            shortDescription = "Share Resource Contact App",
+            imageUrl = "drawable/projects/projectShowcase3.jpg",
+            techStack = listOf("Kotlin", "Jetpack Compose", "Git")
+        ),
+        ProjectWorked(
+            projectName = "App/Web Development",
+            clientName = "Self",
+            shortDescription = "Portfolio Application for Individual",
+            imageUrl = "drawable/projects/projectShowcase4.jpg",
+            techStack = listOf("Kotlin", "Jetpack Compose", "Git")
+        ),
+
     )
 
 }

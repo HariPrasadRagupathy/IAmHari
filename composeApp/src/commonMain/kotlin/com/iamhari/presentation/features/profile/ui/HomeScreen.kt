@@ -45,14 +45,7 @@ fun HomeScreen(navController: NavHostController) {
         Skill("GitHub", "drawable/skills/github.jpeg"),
 
     )
-    val projectWorked = listOf(
-        ProjectWorked("Jio Design System", "Jio", "",listOf("Kotlin", "Jetpack Compose", "Git")),
-        ProjectWorked("Jio Design System", "Jio", "A resource-sharing app based on skills and locations,\n" +
-                "recommended\n" +
-                " by trusted networks. Allows sharing and finding contact\n" +
-                "details of known\n" +
-                " resources like electricians and plumbers.",listOf("Kotlin", "Jetpack Compose", "Git"))
-    )
+
 
     var selectedTab by remember { mutableStateOf(tabs[0]) }
     val listState = rememberLazyListState()
@@ -84,7 +77,7 @@ fun HomeScreen(navController: NavHostController) {
                 ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
             }
             item {
-                ProjectsCandidate(projectWorked)
+                ProjectsCandidate(StaticData.projectWorked)
             }
             item {
                 ContactCandidate()

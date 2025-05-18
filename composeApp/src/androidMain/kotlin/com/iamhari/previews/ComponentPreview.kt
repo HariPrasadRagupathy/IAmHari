@@ -1,15 +1,11 @@
 package com.iamhari.previews
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Surface
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.MailOutline
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.iamhari.presentation.components.molecules.TimeLineItem
-import com.iamhari.presentation.components.molecules.YearsOfExperience
+import com.iamhari.data.models.ProjectWorked
+import com.iamhari.presentation.components.molecules.ProjectCard
 
 
 /*@Preview
@@ -32,24 +28,21 @@ fun SkillComponents(){
 
 
 
-/*@Preview
+
 @Composable
 fun JobComponent() {
-    Surface {
-        Column(modifier = Modifier.background(MaterialTheme.colorScheme.onSurface)) {
-            ProjectCard(
-                ProjectWorked(
-                    "Jio Design System",
-                    "Jio",
-                    """The JDS Design System employs Atomic Design principles,
-categorizing elements into atoms, molecules, organisms, and templates for modular UI components development. Ensures consistency and efficiency with clear documentation for rapid prototyping and iteration.""",
-                    listOf("Kotlin", "Jetpack Compose", "Git")
-                )
-            )
+    //Text("String")
 
-        }
-    }
-}*/
+    ProjectCard(
+        ProjectWorked(
+            projectName = "Design System for Applications",
+            clientName = "Jio",
+            shortDescription = "App / Component Development",
+            techStack = listOf("Kotlin", "Jetpack Compose", "Git")
+        )
+    )
+
+}
 
 /*@Preview
 @Composable
@@ -71,6 +64,17 @@ fun YearsOfExperiencePreview() {
 }*/
 
 @Preview
+@Composable
+fun GeneralPreview() {
+    Surface {
+        Column {
+            JobComponent()
+        }
+    }
+}
+
+
+/*@Preview
 @Composable
 fun TimeLineItemPreview() {
     Surface {
@@ -98,5 +102,5 @@ fun TimeLineItemPreview() {
             }
         }
     }
-}
+}*/
 
