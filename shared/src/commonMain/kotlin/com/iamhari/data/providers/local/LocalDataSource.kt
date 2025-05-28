@@ -1,0 +1,19 @@
+package com.iamhari.data.providers.local
+
+import com.iamhari.data.models.ProjectWorked
+import com.iamhari.data.providers.local.constants.StaticData
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+
+interface LocalDataSource {
+    fun getProjectWorked(): Flow<List<ProjectWorked>>
+}
+
+internal class LocalDataSourceImpl() : LocalDataSource{
+    override fun getProjectWorked(): Flow<List<ProjectWorked>> {
+        return flow {
+            emit(StaticData.projectWorked)
+        }
+    }
+
+}

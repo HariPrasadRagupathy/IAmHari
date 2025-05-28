@@ -30,11 +30,13 @@ import com.iamhari.presentation.components.templates.ExperienceCandidate
 import com.iamhari.presentation.components.templates.ProjectsCandidate
 import com.iamhari.presentation.components.templates.SkillsCandidate
 import com.iamhari.presentation.components.templates.TopMenuSection
+import com.iamhari.presentation.features.profile.vm.HomeScreenViewModel
 import kotlinx.coroutines.launch
+import org.koin.compose.viewmodel.koinViewModel
 
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController, viewModel: HomeScreenViewModel = koinViewModel<HomeScreenViewModel>()) {
 
     val tabs = listOf("Hari Prasad", "About", "Skills", "Experience", "Projects", "Contact")
     val skills = listOf(
@@ -82,7 +84,7 @@ fun HomeScreen(navController: NavHostController) {
                 ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
             }
             item {
-                ProjectsCandidate(StaticData.projectWorked)
+                ProjectsCandidate(viewModel.projectWorked.value)
             }
             item {
                 ContactCandidate()

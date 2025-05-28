@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.iamhari.di.appKoinModule
+import com.iamhari.di.dataKoinModule
 import com.iamhari.navigation.AppNavController
 import com.iamhari.theme.PortfolioTheme
 import org.jetbrains.compose.resources.painterResource
@@ -17,10 +19,14 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import iamhari.composeapp.generated.resources.Res
 import iamhari.composeapp.generated.resources.compose_multiplatform
+import org.koin.core.context.startKoin
 
 @Composable
 @Preview
 fun App() {
+    startKoin {
+        modules(dataKoinModule,appKoinModule)
+    }
     PortfolioTheme {
         AppNavController()
         /*var showContent by remember { mutableStateOf(false) }

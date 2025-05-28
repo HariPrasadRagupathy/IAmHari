@@ -84,6 +84,12 @@ kotlin {
             implementation(project.dependencies.platform(libs.coil.bom))
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
+
+            //Koin
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.composeVM)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
