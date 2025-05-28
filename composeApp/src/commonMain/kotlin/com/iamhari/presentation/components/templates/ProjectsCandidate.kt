@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,12 +21,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.iamhari.data.models.ProjectWorked
 import com.iamhari.presentation.components.molecules.ProjectCard
+import com.iamhari.presentation.features.profile.vm.HomeScreenViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.viewmodel.koinViewModel
 
 
 @Preview
 @Composable
-fun ProjectsCandidate(projectWorked: List<ProjectWorked>) {
+fun ProjectsCandidate(viewModel: HomeScreenViewModel = koinViewModel<HomeScreenViewModel>()) {
+    val projectWorked by viewModel.projectWorked.collectAsState()
     Column(
         Modifier.fillMaxWidth().background(color =  Color(0xFFF5F5F5)).padding(vertical = 30.dp),
         verticalArrangement = Arrangement.Top,

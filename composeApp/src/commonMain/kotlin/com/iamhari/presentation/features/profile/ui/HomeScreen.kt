@@ -84,7 +84,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeScreenViewModel 
                 ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
             }
             item {
-                ProjectsCandidate(viewModel.projectWorked.value)
+                ProjectsCandidate()
             }
             item {
                 ContactCandidate()
