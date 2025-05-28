@@ -1,6 +1,7 @@
 package com.iamhari.data.providers.local.constants
 
 import com.iamhari.data.models.ProjectWorked
+import com.iamhari.data.models.Skill
 import com.iamhari.data.models.WorkExperience
 
 object StaticData {
@@ -84,5 +85,19 @@ object StaticData {
         ),
 
     )
+
+    val skills = listOf(
+        Skill("Kotlin", "drawable/skills/kotlin.png"),
+        Skill("Jetpack Compose", "drawable/skills/jetpack_compose.png"),
+        Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
+        Skill("Compose Multiplatform", "drawable/skills/cmp.png"),
+        Skill("Native Android", "drawable/skills/android.png"),
+        Skill("Ktor", "drawable/skills/ktor.png"),
+        Skill("Flutter", "drawable/skills/flutter.png"),
+        Skill("Dart", "drawable/skills/dart.jpeg"),
+        Skill("Git", "drawable/skills/git.png"),
+        Skill("GitHub", "drawable/skills/github.jpeg"),
+
+        )
 
 }

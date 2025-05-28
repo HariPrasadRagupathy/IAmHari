@@ -39,19 +39,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun HomeScreen(navController: NavHostController, viewModel: HomeScreenViewModel = koinViewModel<HomeScreenViewModel>()) {
 
     val tabs = listOf("Hari Prasad", "About", "Skills", "Experience", "Projects", "Contact")
-    val skills = listOf(
-        Skill("Kotlin", "drawable/skills/kotlin.png"),
-        Skill("Jetpack Compose", "drawable/skills/jetpack_compose.png"),
-        Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
-        Skill("Compose Multiplatform", "drawable/skills/cmp.png"),
-        Skill("Native Android", "drawable/skills/android.png"),
-        Skill("Ktor", "drawable/skills/ktor.png"),
-        Skill("Flutter", "drawable/skills/flutter.png"),
-        Skill("Dart", "drawable/skills/dart.jpeg"),
-        Skill("Git", "drawable/skills/git.png"),
-        Skill("GitHub", "drawable/skills/github.jpeg"),
 
-        )
 
 
     var selectedTab by remember { mutableStateOf(tabs[0]) }
@@ -78,7 +66,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeScreenViewModel 
                 AboutCandidate()
             }
             item {
-                SkillsCandidate(skills)
+                SkillsCandidate()
             }
             item {
                 ExperienceCandidate(StaticData.workExperience, StaticData.educationExperience)
