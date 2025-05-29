@@ -100,4 +100,6 @@ object StaticData {
 
         )
 
+    val aboutMe = """Senior Mobile Application Developer with 10+ years of experience in mobile application development, contributing to a total of 15+ years in IT programming technologies. Proficient in developing mobile applications using Kotlin, Jetpack Compose, Flutter, and Dart. Experienced in creating and customizing UI components through a Design System, interpreting REST APIs, ensuring security, and integrating local databases for data persistence. Skilled in managing applications with a well-defined layered architecture and proficient in Git and CI/CD tools. Committed to clean code practices and delivering innovative mobile applications."""
+
 }

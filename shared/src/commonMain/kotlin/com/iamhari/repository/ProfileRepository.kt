@@ -13,6 +13,7 @@ import kotlinx.coroutines.flow.onEach
 interface ProfileRepository {
     suspend fun getProjectWorked(): Flow<List<ProjectWorked>>
     suspend fun getSkills(): Flow<List<Skill>>
+    suspend fun getAboutMe() : Flow<String>
 
 }
 
@@ -26,5 +27,9 @@ class ProfileRepositoryImpl(
 
     override suspend fun getSkills(): Flow<List<Skill>> {
         return localDataSource.getSkills()
+    }
+
+    override suspend fun getAboutMe(): Flow<String> {
+        return localDataSource.getAboutMe()
     }
 }

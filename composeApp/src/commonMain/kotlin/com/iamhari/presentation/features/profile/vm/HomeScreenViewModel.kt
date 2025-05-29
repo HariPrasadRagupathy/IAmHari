@@ -18,6 +18,9 @@ class HomeScreenViewModel(val appRepository: AppRepository) : ViewModel() {
     private val _skillsSet = MutableStateFlow<List<Skill>>(emptyList<Skill>())
     val skillSet: StateFlow<List<Skill>> = _skillsSet
 
+    private val _aboutMe = MutableStateFlow<String>("")
+    val aboutMe: StateFlow<String> = _aboutMe
+
     init {
         viewModelScope.launch {
             appRepository.getProjectWorked().collect { it ->
@@ -25,6 +28,9 @@ class HomeScreenViewModel(val appRepository: AppRepository) : ViewModel() {
             }
             appRepository.getSkills().collect {
                 _skillsSet.value = it
+            }
+            appRepository.getAboutMe().collect {
+                _aboutMe.value = it
             }
         }
     }
