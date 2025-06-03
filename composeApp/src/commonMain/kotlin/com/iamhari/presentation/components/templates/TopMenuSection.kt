@@ -39,6 +39,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.iamhari.presentation.components.molecules.FullDialog
 import com.iamhari.theme.AppFonts
+import com.iamhari.utiities.openUrl
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -82,6 +83,7 @@ fun TopMenuSection(
                 horizontalArrangement = Arrangement.spacedBy(20.dp)
             ) {
                 Row(
+                    modifier = Modifier.clickable { openUrl("tel:918861099488") },
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
@@ -95,6 +97,7 @@ fun TopMenuSection(
                     )
                 }
                 Row(
+                    modifier = Modifier.clickable { openUrl("mailto:hariprasadragupathy@gmail.com") },
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {

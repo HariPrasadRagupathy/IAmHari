@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.iamhari.presentation.components.molecules.BottomCard
 import com.iamhari.presentation.components.molecules.ContactCard
+import com.iamhari.utiities.openUrl
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -90,28 +91,28 @@ private fun AboutCandidateDetails() {
             iconUri = "drawable/whatsapp.png",
             contentHeading = "WhatsApp",
             content = "(+91) 88610-99488",
-            onClick = { }
+            onClick = { openUrl("https://wa.me/918861099488") }
         )
         ContactCard(
             modifier = Modifier,
             iconUri = "drawable/call.png",
             contentHeading = "Phone",
             content = "(+91) 88610-99488",
-            onClick = { }
+            onClick = {openUrl("tel:8861099488") }
         )
         ContactCard(
             modifier = Modifier,
             iconUri = "drawable/gmail.png",
             contentHeading = "Gmail",
             content = "hariprasadragupathy@gmail.com",
-            onClick = { }
+            onClick = { openUrl("mailto:hariprasadragupathy@gmail.com") }
         )
         ContactCard(
             modifier = Modifier,
             iconUri = "drawable/linkedIn.png",
             contentHeading = "LinkedIn",
             content = "www.linkedin.com/in/hariprasadragupathy",
-            onClick = { }
+            onClick = {openUrl("https://www.linkedin.com/in/hariprasadragupathy/") }
         )
 
     }
