@@ -16,6 +16,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,14 +29,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.iamhari.presentation.components.molecules.YearsOfExperience
+import com.iamhari.presentation.features.profile.vm.HomeScreenViewModel
 import com.iamhari.theme.AppFonts
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
+import org.koin.compose.viewmodel.koinViewModel
 
 
 @Preview
 @Composable
-fun AboutCandidate() {
+fun AboutCandidate(viewModel: HomeScreenViewModel = koinViewModel<HomeScreenViewModel>()) {
+    val aboutMe by viewModel.aboutMe.collectAsState()
     Column (
         Modifier.fillMaxWidth().padding(vertical = 50.dp),
         verticalArrangement = Arrangement.Top,
@@ -43,16 +47,16 @@ fun AboutCandidate() {
         Text("Know", style = MaterialTheme.typography.bodyLarge)
         Text("About Me", style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.Bold))
         Spacer(modifier = Modifier.height(10.dp))
-        AboutCandidateDetails()
+        AboutCandidateDetails(aboutMe)
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun AboutCandidateDetails() {
+private fun AboutCandidateDetails(aboutMe: String = "") {
 
         FlowRow(modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp)) {
-            Text("Senior Mobile Application Developer with 10+ years of experience in mobile application development, contributing to a total of 15+ years in IT programming technologies. Proficient in developing mobile applications using Kotlin, Jetpack Compose, Flutter, and Dart. Experienced in creating and customizing UI components through a Design System, interpreting REST APIs, ensuring security, and integrating local databases for data persistence. Skilled in managing applications with a well-defined layered architecture and proficient in Git and CI/CD tools. Committed to clean code practices and delivering innovative mobile applications.",
+            Text(aboutMe,
                 style = TextStyle.Default.copy( fontSize = 18.sp, lineHeight = 40.sp, fontFamily = AppFonts.PoppinsFontFamily()),
                 modifier = Modifier.background(Color.White).padding(40.dp).weight(0.7f).align(Alignment.CenterVertically))
             //AsyncImage(model = "https://picsum.photos/id/9/400/400", contentDescription = "", contentScale = ContentScale.Crop, modifier = Modifier.size(400.dp).padding(20.dp))

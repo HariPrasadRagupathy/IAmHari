@@ -18,3 +18,5 @@ fun getScreenSizeCategory(): ScreenSize {
     }
 
 }
+
+expect fun openUrl(url: String)

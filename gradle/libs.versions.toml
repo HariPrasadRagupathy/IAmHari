@@ -24,6 +24,9 @@ coilVersion = "3.0.4"
 # Serialization
 kotlinx-serialization = "1.7.3"
 
+#koin
+koin-bom = "4.0.0"
+
 # Other libraries
 crisban-material3-window = "0.5.0"
 kotlinx-coroutines = "1.9.0"
@@ -67,6 +70,7 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 # Coroutines
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 
 # Logging
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
@@ -80,6 +84,12 @@ ktor-server-tests = { module = "io.ktor:ktor-server-tests-jvm", version.ref = "k
 coil-bom = {module = "io.coil-kt.coil3:coil-bom", version.ref = "coilVersion"}
 coil-compose = {module = "io.coil-kt.coil3:coil-compose"}
 coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3" }
+
+#Koin
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-core = { module = "io.insert-koin:koin-core"}
+koin-compose = { module = "io.insert-koin:koin-compose"}
+koin-composeVM = { module = "io.insert-koin:koin-compose-viewmodel"}
 
 
 # Testing

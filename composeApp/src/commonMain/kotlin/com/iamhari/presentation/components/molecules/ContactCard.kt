@@ -33,7 +33,7 @@ fun ContactCard(
 ) {
 
     Card(
-        modifier = Modifier.width(300.dp).clickable { onClick },
+        modifier = Modifier.width(300.dp).clickable { onClick() },
         elevation = CardDefaults.cardElevation(10.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
