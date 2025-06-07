@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -47,9 +48,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.iamhari.data.enums.ScreenSize
 import com.iamhari.presentation.components.molecules.TypewriterText
+import com.iamhari.presentation.components.templates.CandidateScreen.CandidateStyle
+import com.iamhari.presentation.core.RenderResponsive
+import com.iamhari.presentation.core.ResponsiveComponent
+import com.iamhari.presentation.core.ScreenStyle
 import com.iamhari.theme.AppFonts
 import iamhari.composeapp.generated.resources.Res
 import io.ktor.http.CacheControl
@@ -57,21 +65,61 @@ import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
+
+
+class CandidateScreen(
+    private val onContactClick: () -> Unit
+) : ResponsiveComponent<CandidateStyle> {
+
+    data class CandidateStyle(
+        val padding: Dp,
+        val spacing: Dp,
+        val textAlign: TextAlign
+    ) : ScreenStyle
+
+    override fun getStyle(screenSize: ScreenSize): CandidateStyle = when (screenSize) {
+        ScreenSize.Compact -> CandidateStyle(16.dp, 8.dp, TextAlign.Center)
+        ScreenSize.Medium -> CandidateStyle(32.dp, 16.dp, TextAlign.Center)
+        ScreenSize.Expanded -> CandidateStyle(100.dp, 50.dp, TextAlign.End)
+    }
+
+    @Composable
+    override fun Compact(style: CandidateStyle) {
+        Column(Modifier.padding(style.padding)) {
+            CandidateImage()
+            Spacer(Modifier.height(style.spacing))
+            CandidateDetails(onContactClick)
+        }
+    }
+
+    @Composable
+    override fun Medium(style: CandidateStyle) {
+        Column(Modifier.padding(style.padding)) {
+            CandidateImage()
+            Spacer(Modifier.height(style.spacing))
+            CandidateDetails(onContactClick)
+        }
+    }
+
+    @Composable
+    override fun Expanded(style: CandidateStyle) {
+        Row(Modifier.padding(style.padding)) {
+            CandidateImage()
+            CandidateDetails(onContactClick)
+        }
+    }
+}
+
+
 @OptIn(ExperimentalLayoutApi::class)
 @Preview
 @Composable
 fun CandidateIntroduction(
     onContactClick: () -> Unit = {}
 ) {
-    FlowRow(
-        Modifier.fillMaxSize().background(Color(0xFF4287F5))
-            .padding(vertical = 50.dp, horizontal = 100.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalArrangement = Arrangement.Center
-    ) {
-        CandidateImage()
-        CandidateDetails(onContactClick = { onContactClick() })
-    }
+    CandidateScreen(onContactClick).Draw()
+
+
 }
 
 @Preview
