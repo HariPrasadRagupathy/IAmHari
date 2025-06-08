@@ -5,6 +5,7 @@ import com.iamhari.data.enums.ScreenSize
 import com.iamhari.utiities.getScreenSizeCategory
 
 interface ResponsiveComponent<T : ScreenStyle> {
+    @Composable
     fun getStyle(screenSize: ScreenSize): T
 
     @Composable
