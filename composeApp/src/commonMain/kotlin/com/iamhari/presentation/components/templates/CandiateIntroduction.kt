@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
@@ -85,19 +86,26 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
 
     data class CandidateDetailsStyle(
         val padding: Dp=10.dp,
-        val nameTextStyle : TextStyle
+        val nameTextStyle : TextStyle,
+        val horizontalAlignment: Alignment.Horizontal,
+        val textAlign: TextAlign = TextAlign.End
     ): ScreenStyle
     
     @Composable
     override fun getStyle(screenSize: ScreenSize): CandidateDetailsStyle = when(screenSize){
         ScreenSize.Compact -> CandidateDetailsStyle(
-            nameTextStyle = MaterialTheme.typography.titleMedium.copy(fontFamily = AppFonts.PoppinsFontFamily())
+            nameTextStyle = MaterialTheme.typography.titleMedium.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            textAlign = TextAlign.Center
         )
         ScreenSize.Medium -> CandidateDetailsStyle(
-            nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily())
+            nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            textAlign = TextAlign.Center
         )
         ScreenSize.Expanded -> CandidateDetailsStyle(
-            nameTextStyle = MaterialTheme.typography.displayLarge.copy(fontFamily = AppFonts.PoppinsFontFamily())
+            nameTextStyle = MaterialTheme.typography.displayLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            horizontalAlignment = Alignment.End
         )
     }
 
@@ -105,7 +113,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     override fun Compact(style: CandidateDetailsStyle) {
         Column(
             verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Bottom),
-            horizontalAlignment = Alignment.End
+            horizontalAlignment = style.horizontalAlignment
         ) {
             Text(
                 "Hello, I am",
@@ -113,15 +121,18 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
             )
             Text(
                 "Hari Prasad Ragupathy",
-                style = style.nameTextStyle
+                style = style.nameTextStyle,
+                textAlign = style.textAlign
             )
             Text(
                 "Senior Application Developer",
-                style = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily())
+                style = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+                textAlign = style.textAlign
             )
             Text(
                 "Expert In",
-                style = MaterialTheme.typography.headlineSmall.copy(fontFamily = AppFonts.PoppinsFontFamily())
+                style = MaterialTheme.typography.headlineSmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+                textAlign = style.textAlign
             )
             TypewriterText(
                 listOf(
@@ -133,7 +144,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
                     "Git"
                 )
             )
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp), horizontalAlignment = Alignment.CenterHorizontally)  {
                 OutlinedButton(
                     border = BorderStroke(1.dp, Color.White),
                     onClick = {},
@@ -158,7 +169,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     override fun Medium(style: CandidateDetailsStyle) {
         Column(
             verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Bottom),
-            horizontalAlignment = Alignment.End
+            horizontalAlignment = style.horizontalAlignment
         ) {
             Text(
                 "Hello, I am",
@@ -211,7 +222,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     override fun Expanded(style: CandidateDetailsStyle) {
         Column(
             verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Bottom),
-            horizontalAlignment = Alignment.End
+            horizontalAlignment = style.horizontalAlignment
         ) {
             Text(
                 "Hello, I am",
@@ -265,7 +276,8 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
 
 class CandidateScreen(
     private val onContactClick: () -> Unit
-) : ResponsiveComponent<CandidateStyle> {
+) : ResponsiveComponent<CandidateStyle>
+{
 
     data class CandidateStyle(
         val padding: Dp,
@@ -304,6 +316,7 @@ class CandidateScreen(
         Column(
             Modifier.fillMaxSize().background(style.backgroundColor)
                 .padding(vertical = style.verticalPadding, horizontal = style.horizontalPadding),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CandidateImage()
             Spacer(Modifier.height(style.spacing))
@@ -332,6 +345,7 @@ class CandidateScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             CandidateImage()
+            Spacer(Modifier.width(style.spacing))
             CandidateDetails(onContactClick)
         }
     }
