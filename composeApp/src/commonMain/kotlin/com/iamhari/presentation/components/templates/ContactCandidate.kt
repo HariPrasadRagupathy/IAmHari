@@ -26,9 +26,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.iamhari.data.enums.ScreenSize
 import com.iamhari.presentation.components.molecules.BottomCard
 import com.iamhari.presentation.components.molecules.ContactCard
+import com.iamhari.presentation.core.ResponsiveComponent
+import com.iamhari.presentation.core.ScreenStyle
 import com.iamhari.utiities.openUrl
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -49,13 +53,53 @@ fun ContactCandidate() {
 
         )
 
-        Row(modifier = Modifier.padding(vertical = 100.dp)) {
-            Column(modifier = Modifier.weight(0.5f)) { ContactText() }
-            Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
-        }
+        ContactCandidateResponsive().Draw()
 
 
     }
+}
+
+
+class ContactCandidateResponsive() : ResponsiveComponent<ContactCandidateResponsive.Style> {
+
+    data class Style(
+        val menuHorizontalPadding: Dp = 100.dp,
+        val menuVerticalPadding: Dp = 20.dp,
+        val contactSectionVisibility: Boolean = true
+    ) : ScreenStyle
+
+    @Composable
+    override fun getStyle(screenSize: ScreenSize): Style = when (screenSize) {
+        ScreenSize.Compact -> Style(contactSectionVisibility = false, menuHorizontalPadding = 20.dp)
+        ScreenSize.Medium -> Style(contactSectionVisibility = false, menuHorizontalPadding = 50.dp, menuVerticalPadding = 100.dp)
+        ScreenSize.Expanded -> Style(contactSectionVisibility = true, menuVerticalPadding = 100.dp)
+    }
+
+    @Composable
+    override fun Compact(style: Style) {
+        Column(modifier = Modifier.padding(horizontal = style.menuHorizontalPadding, vertical = style.menuVerticalPadding)) {
+            ContactText()
+            AboutCandidateDetails()
+        }
+    }
+
+    @Composable
+    override fun Medium(style: Style) {
+        Column(modifier = Modifier.padding(vertical = style.menuVerticalPadding)) {
+            Column(modifier = Modifier.weight(0.5f)) { ContactText() }
+            Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
+        }
+    }
+
+    @Composable
+    override fun Expanded(style: Style) {
+        Row(modifier = Modifier.padding(vertical = style.menuVerticalPadding)) {
+            Column(modifier = Modifier.weight(0.5f)) { ContactText() }
+            Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
+        }
+    }
+
+
 }
 
 @Composable
@@ -98,7 +142,7 @@ private fun AboutCandidateDetails() {
             iconUri = "drawable/call.png",
             contentHeading = "Phone",
             content = "(+91) 88610-99488",
-            onClick = {openUrl("tel:8861099488") }
+            onClick = { openUrl("tel:8861099488") }
         )
         ContactCard(
             modifier = Modifier,
@@ -112,7 +156,7 @@ private fun AboutCandidateDetails() {
             iconUri = "drawable/linkedIn.png",
             contentHeading = "LinkedIn",
             content = "www.linkedin.com/in/hariprasadragupathy",
-            onClick = {openUrl("https://www.linkedin.com/in/hariprasadragupathy/") }
+            onClick = { openUrl("https://www.linkedin.com/in/hariprasadragupathy/") }
         )
 
     }
