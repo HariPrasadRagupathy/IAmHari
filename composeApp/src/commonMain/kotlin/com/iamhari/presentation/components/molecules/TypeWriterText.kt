@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.iamhari.theme.AppFonts
 import kotlinx.coroutines.delay
@@ -73,6 +74,7 @@ fun TypewriterText(
         exit = fadeOut(animationSpec = tween(300))
     ) {
         Text(
+            textAlign = TextAlign.Center,
             text = visibleText + if (showCursor) "|" else " ",
             style = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
         )

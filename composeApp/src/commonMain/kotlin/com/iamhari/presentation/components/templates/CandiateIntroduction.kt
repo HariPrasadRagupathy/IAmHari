@@ -94,7 +94,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     @Composable
     override fun getStyle(screenSize: ScreenSize): CandidateDetailsStyle = when(screenSize){
         ScreenSize.Compact -> CandidateDetailsStyle(
-            nameTextStyle = MaterialTheme.typography.titleMedium.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.CenterHorizontally,
             textAlign = TextAlign.Center
         )
