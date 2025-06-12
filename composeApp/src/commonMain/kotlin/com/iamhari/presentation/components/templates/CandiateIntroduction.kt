@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -329,6 +330,7 @@ class CandidateScreen(
         Column(
             Modifier.fillMaxSize().background(style.backgroundColor)
                 .padding(vertical = style.verticalPadding, horizontal = style.horizontalPadding),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CandidateImage()
             Spacer(Modifier.height(style.spacing))
