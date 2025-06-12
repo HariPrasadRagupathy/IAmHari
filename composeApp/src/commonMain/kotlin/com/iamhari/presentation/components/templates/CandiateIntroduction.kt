@@ -88,6 +88,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     data class CandidateDetailsStyle(
         val padding: Dp=10.dp,
         val nameTextStyle : TextStyle,
+        val designationTextStyle : TextStyle,
         val horizontalAlignment: Alignment.Horizontal,
         val textAlign: TextAlign = TextAlign.End
     ): ScreenStyle
@@ -96,16 +97,19 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     override fun getStyle(screenSize: ScreenSize): CandidateDetailsStyle = when(screenSize){
         ScreenSize.Compact -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            designationTextStyle = MaterialTheme.typography.headlineMedium.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.CenterHorizontally,
             textAlign = TextAlign.Center
         )
         ScreenSize.Medium -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.CenterHorizontally,
+            designationTextStyle = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             textAlign = TextAlign.Center
         )
         ScreenSize.Expanded -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.displayLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            designationTextStyle = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.End
         )
     }
