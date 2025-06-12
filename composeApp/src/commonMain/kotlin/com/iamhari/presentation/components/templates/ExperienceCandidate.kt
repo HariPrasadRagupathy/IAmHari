@@ -119,7 +119,42 @@ class AboutCandidateResponsive(val workExperienceList: List<WorkExperience> = li
 
     @Composable
     override fun Medium(style: Style) {
-        TODO("Not yet implemented")
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 3.dp)
+                .border(width = 1.dp, color = Color(0xFFF5F5F5), shape = RoundedCornerShape(10.dp))
+        ) {
+            workExperienceList.forEach {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceBetween
+                ) {
+
+                    Text(
+                        it.year,
+                        style = MaterialTheme.typography.bodyMedium.copy(
+                            fontFamily = AppFonts.PoppinsFontFamily()
+                        )
+                    )
+                    Text(
+                        it.title,
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = AppFonts.PoppinsFontFamily()
+                        )
+                    )
+                    Text(
+                        it.ventureName,
+                        style = MaterialTheme.typography.bodyMedium.copy(fontFamily = AppFonts.PoppinsFontFamily())
+                    )
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.height(10.dp))
+            }
+        }
     }
 
     @Composable
