@@ -53,6 +53,7 @@ import com.iamhari.presentation.components.templates.CandidateScreen.CandidateSt
 import com.iamhari.presentation.core.ResponsiveComponent
 import com.iamhari.presentation.core.ScreenStyle
 import com.iamhari.theme.AppFonts
+import com.iamhari.utiities.openUrl
 import iamhari.composeapp.generated.resources.Res
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -152,7 +153,9 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
             Column(verticalArrangement = Arrangement.spacedBy(10.dp), horizontalAlignment = Alignment.CenterHorizontally)  {
                 OutlinedButton(
                     border = BorderStroke(1.dp, Color.White),
-                    onClick = {},
+                    onClick = {
+                        openUrl("files/Hari_Prasad_Ragupathy_-_Senior_Android_Developer.pdf")
+                    },
                     colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White)
                 ) { Text("Download CV") }
                 Button(

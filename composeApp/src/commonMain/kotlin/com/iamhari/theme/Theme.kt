@@ -1,32 +1,28 @@
 package com.iamhari.theme
 
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.isSystemInDarkTheme
 
 
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.material3.MaterialTheme as Material3Theme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.staticCompositionLocalOf
 import com.iamhari.PlatformType
 import com.iamhari.data.enums.ScreenSize
 import com.iamhari.getPlatformType
+import com.iamhari.utiities.currentWindowSizeClass
 
 val LocalSpacing = compositionLocalOf<Spacing> { MediumSpacing } // Default value
 val LocalFontSize = compositionLocalOf<FontSize> { MediumFontSize } // Default value
 
 
-@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
 fun PortfolioTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    windowSizeClass: WindowSizeClass = calculateWindowSizeClass(),
+    windowSizeClass: WindowSizeClass = currentWindowSizeClass(),
     content: @Composable () -> Unit
 ) {
     val dimensionVariant = when (windowSizeClass.widthSizeClass) {

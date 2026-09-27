@@ -19,13 +19,16 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import iamhari.composeapp.generated.resources.Res
 import iamhari.composeapp.generated.resources.compose_multiplatform
+import org.koin.core.context.GlobalContext
 import org.koin.core.context.startKoin
 
 @Composable
 @Preview
 fun App() {
-    startKoin {
-        modules(dataKoinModule,appKoinModule)
+    if (GlobalContext.getOrNull() == null) {
+        startKoin {
+            modules(dataKoinModule, appKoinModule)
+        }
     }
     PortfolioTheme {
         AppNavController()
