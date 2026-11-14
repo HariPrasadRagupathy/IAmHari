@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy · Inexer</title>
+    <meta name="description" content="Privacy Policy for Inexer, an income and expense tracking app.">
+    <style>
+        :root {
+            --bg: #f7f5f1;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --muted: #5c5c5c;
+            --border: #e5e1d8;
+            --accent: #1f6b4a;
+            --link: #1a5f8a;
+            --warn: #8a4b12;
+            --warn-bg: #fff6eb;
+            --warn-border: #e4c49a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+            line-height: 1.65;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .meta {
+            margin: 0;
+            color: var(--muted);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+        }
+
+        .intro {
+            margin: 0 0 28px;
+            font-size: 1.05rem;
+        }
+
+        .note {
+            margin: 0 0 24px;
+            padding: 16px 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .caution {
+            margin: 0 0 32px;
+            padding: 16px 18px;
+            background: var(--warn-bg);
+            border: 1px solid var(--warn-border);
+            border-left: 3px solid var(--warn);
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .caution strong.label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--warn);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin: 0 0 36px;
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+        }
+
+        h2 {
+            margin: 40px 0 14px;
+            font-size: 1.35rem;
+            line-height: 1.3;
+        }
+
+        h3 {
+            margin: 24px 0 10px;
+            font-size: 1.05rem;
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-weight: 650;
+        }
+
+        p, li {
+            color: var(--text);
+        }
+
+        p {
+            margin: 0 0 14px;
+        }
+
+        ul {
+            margin: 0 0 16px;
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--link);
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #efece6;
+            font-weight: 650;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 32px 18px 64px;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            td {
+                padding: 4px 14px;
+                border: none;
+            }
+
+            td::before {
+                content: attr(data-label);
+                display: block;
+                font-weight: 650;
+                color: var(--muted);
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+<main class="page">
+    <header>
+        <p class="eyebrow">Inexer</p>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: 14 November 2026</p>
+    </header>
+
+    <p class="intro">
+        This Privacy Policy describes how <strong>Inexer</strong> (“we”, “us”, or “the App”) handles information when you use the Inexer mobile application. By downloading, installing, accessing, or using the App, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+    </p>
+
+    <p>
+        Inexer is an income and expense tracking app. <strong>Your financial records are stored on your device</strong> in a local database. We do not operate a user account system that uploads your ledger to our servers.
+    </p>
+
+    <p class="note">
+        Inexer is a personal productivity tool. It is <strong>not</strong> accounting, tax, investment, legal, or professional financial advice. You are solely responsible for how you use the App and for any decisions you make based on information shown in it.
+    </p>
+
+    <div class="caution">
+        <strong class="label">Important — backup before updating</strong>
+        Because your ledger lives on your device and is not synced to Inexer cloud servers, you must export or back up your data before installing a new release, reinstalling the App, clearing app storage, or changing devices. Updates and device actions can affect on-device data. If you do not keep a backup, you may permanently lose records, and we cannot restore them for you.
+    </div>
+
+    <div class="contact-row">
+        <span><strong>Contact:</strong> <a href="mailto:hariprasadragupathy@gmail.com">hariprasadragupathy@gmail.com</a></span>
+    </div>
+
+    <h2>1. Who this applies to</h2>
+    <p>
+        This policy applies to the production Android app <code>com.hp.inexer</code> (and equivalent Inexer builds you install from official stores).
+    </p>
+
+    <h2>2. Information we process</h2>
+
+    <h3>2.1 Information you enter (stored on your device)</h3>
+    <p>When you use Inexer, you may create:</p>
+    <ul>
+        <li>Income and expense transactions (amounts, dates, categories, notes, spaces/budgets, and similar ledger data)</li>
+        <li>Optional images attached to transaction notes (for example photos taken with the camera or chosen from your device)</li>
+        <li>App settings, including an optional app-lock PIN</li>
+        <li>Export/import preferences (format, schedule, destination)</li>
+    </ul>
+    <p><strong>Where it is stored:</strong> on your device in Inexer’s local database and related app storage.</p>
+    <p>
+        <strong>What we do <em>not</em> do with this ledger data:</strong> we do not sell it, and we do not upload your income/expense database to Inexer-operated servers for cloud sync as part of the current product.
+    </p>
+    <p>
+        You are solely responsible for protecting access to your device, your PIN/app lock if enabled, and any backups or exports you create.
+    </p>
+
+    <h3>2.2 Optional exports you choose</h3>
+    <p>
+        If you use export features, Inexer may write files (such as CSV) to storage on your device, or to another destination that you choose and authorize when such options are available. Those exports contain the financial data you choose to export and remain under your control.
+    </p>
+    <p>
+        We do not control third-party storage services you may use. Their terms and privacy practices apply to data you place there.
+    </p>
+
+    <h3>2.3 Diagnostics and app improvement (Firebase)</h3>
+    <p>In production builds, Inexer uses <strong>Google Firebase</strong>:</p>
+    <ul>
+        <li><strong>Firebase Crashlytics</strong> — crash and stability reports (to fix bugs)</li>
+        <li><strong>Firebase Analytics</strong> — aggregated usage analytics (to understand feature usage)</li>
+    </ul>
+    <p>
+        These services may process technical information such as device model, OS version, app version, language, coarse diagnostics, and crash stack traces. They are provided by Google and subject to Google’s terms and privacy documentation for Firebase.
+    </p>
+    <p>
+        <strong>Important:</strong> Crashlytics/Analytics are for app quality and usage metrics. They are <strong>not</strong> used to host or sync your full income/expense ledger on our servers.
+    </p>
+    <p>
+        You can learn more in Google’s documentation for
+        <a href="https://firebase.google.com/support/privacy">Firebase</a>.
+    </p>
+
+    <h3>2.4 Permissions the App may use</h3>
+    <p>Depending on features you use, Android may show permission prompts for:</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Permission</th>
+            <th>Why</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-label="Permission"><strong>Internet</strong></td>
+            <td data-label="Why">Contact Firebase (Crashlytics/Analytics) and any online features you enable</td>
+        </tr>
+        <tr>
+            <td data-label="Permission"><strong>Camera</strong></td>
+            <td data-label="Why">Optional photos for transaction notes</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>We request permissions only as needed for those features.</p>
+
+    <h3>2.5 Device backups</h3>
+    <p>
+        The Android app may allow system backup (<code>allowBackup</code>). If device backup/restore is enabled on your phone, app data could be included in your device backup according to your OS and account settings. System backup behavior is controlled by your device and Google account settings, not by Inexer support, and is not a substitute for exporting your own backup before an update.
+    </p>
+
+    <h3>2.6 App updates and data safety</h3>
+    <p>Because Inexer stores your ledger locally:</p>
+    <ul>
+        <li><strong>Before updating, reinstalling, clearing data, or switching devices</strong> — export or otherwise back up your data from within the App.</li>
+        <li><strong>After updating</strong> — confirm that your records look correct before entering new data.</li>
+        <li><strong>If something looks wrong</strong> — keep your backup file safe. We may try to help with general guidance, but we cannot guarantee recovery of lost on-device data.</li>
+    </ul>
+
+    <h2>3. How we use information</h2>
+    <p>We use information as follows:</p>
+    <ul>
+        <li><strong>On-device data</strong> — to provide income/expense tracking, reports, settings, app lock, and export/import on your device</li>
+        <li><strong>Diagnostics/analytics</strong> — to improve stability and understand aggregate usage</li>
+        <li><strong>Support</strong> — if you email us at <a href="mailto:hariprasadragupathy@gmail.com">hariprasadragupathy@gmail.com</a>, we use the content of your message to respond</li>
+    </ul>
+    <p>We do <strong>not</strong> use your on-device financial ledger to show third-party advertising profiles inside the App.</p>
+
+    <h2>4. Sharing of information</h2>
+    <p>We do not sell your personal information.</p>
+    <p>We may share limited technical data with:</p>
+    <ul>
+        <li><strong>Google Firebase</strong> — as described above (Crashlytics and Analytics)</li>
+        <li><strong>Service providers</strong> only as needed to operate the App (for example hosting this policy page)</li>
+    </ul>
+    <p>
+        If you export data to a destination you choose, that data is shared with that service under <strong>your</strong> account and their policies.
+    </p>
+    <p>We may disclose information if required by law or to protect rights, safety, or the integrity of the App.</p>
+
+    <h2>5. Data retention</h2>
+    <ul>
+        <li><strong>On-device ledger and settings:</strong> retained on your device until you delete the data, clear app storage, or uninstall the App (subject to any device backups you keep).</li>
+        <li><strong>Exports:</strong> retained wherever you saved them, under your control.</li>
+        <li><strong>Firebase diagnostics/analytics:</strong> retained according to Google Firebase retention settings and practices.</li>
+        <li><strong>Support emails:</strong> retained as needed to handle your request.</li>
+    </ul>
+
+    <h2>6. Security</h2>
+    <p>
+        We design Inexer so sensitive financial records stay in <strong>local device storage</strong>. Optional app lock (PIN) can add a barrier when opening the App on your device.
+    </p>
+    <p>
+        No method of storage or software is 100% secure or error-free. Protect your device with a screen lock, keep your own backups, and uninstall or clear data if you no longer want Inexer data on a device.
+    </p>
+
+    <h2>7. Children’s privacy</h2>
+    <p>
+        Inexer is not directed at children under 13 (or the minimum age required in your country). We do not knowingly collect personal information from children. If you believe a child has provided information through the App, contact us and we will take appropriate steps.
+    </p>
+
+    <h2>8. International processing</h2>
+    <p>
+        Firebase and related Google services may process diagnostic/analytics data in locations where Google operates. Your on-device ledger remains on your device unless you export it or it is included in a device backup you control.
+    </p>
+
+    <h2>9. Your choices and responsibilities</h2>
+    <ul>
+        <li><strong>Uninstall / clear storage</strong> — removes on-device App data (except backups/exports outside the App).</li>
+        <li><strong>Permissions</strong> — revoke camera or other permissions in system settings; related features may stop working.</li>
+        <li><strong>Exports / backups</strong> — create and safely store export files; back up before updating to a new release.</li>
+        <li><strong>Contact us</strong> — email <a href="mailto:hariprasadragupathy@gmail.com">hariprasadragupathy@gmail.com</a> for privacy questions.</li>
+    </ul>
+    <p>OS-level controls for ads/analytics may also apply depending on your device settings and Google account preferences.</p>
+
+    <h2>10. Third-party services and links</h2>
+    <p>
+        The App may use or link to third-party services (for example Google Firebase, the Play Store, or LinkedIn). We do not control those services. Their terms and privacy practices are their own, and we are not responsible for their content, security, availability, or handling of information.
+    </p>
+
+    <h2>11. Disclaimer of warranties</h2>
+    <p>
+        The App is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis, without warranties of any kind, whether express, implied, or statutory, to the maximum extent permitted by applicable law. Without limiting the foregoing, we do not warrant that:
+    </p>
+    <ul>
+        <li>the App will be uninterrupted, timely, secure, or error-free;</li>
+        <li>on-device data will never be lost, corrupted, or altered (including during updates, reinstalls, device changes, crashes, or storage failures);</li>
+        <li>exports, imports, backups, or restores will always succeed or be complete;</li>
+        <li>the App will meet your specific financial, tax, business, or record-keeping requirements.</li>
+    </ul>
+
+    <h2>12. Limitation of liability</h2>
+    <p>
+        To the maximum extent permitted by applicable law, we (including the App developer and any contributors) are <strong>not liable</strong> for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for any loss of data, profits, revenue, goodwill, or business opportunity, arising out of or related to your use of (or inability to use) the App, even if we have been advised of the possibility of such damages.
+    </p>
+    <p>
+        Without limiting the above, we are not responsible for loss of ledger data, failed backups, failed restores, issues caused by OS updates, device failures, user actions (including clearing storage, uninstalling, or updating without a backup), or third-party services.
+    </p>
+    <p>
+        To the maximum extent permitted by applicable law, our total liability for any claim arising out of or relating to the App or this Privacy Policy shall not exceed the amount you paid us for the App in the twelve (12) months before the claim (or zero, if the App was obtained free of charge).
+    </p>
+    <p>
+        Some jurisdictions do not allow certain warranty disclaimers or liability limits. In those places, our liability is limited to the fullest extent still allowed by law.
+    </p>
+
+    <h2>13. Changes to this policy</h2>
+    <p>
+        We may update this Privacy Policy from time to time. The “Last updated” date at the top will change when we do. Continued use of the App after an update means you accept the revised policy, where permitted by law. If you do not agree, stop using the App and uninstall it.
+    </p>
+
+    <h2>14. Governing law</h2>
+    <p>
+        To the extent permitted by law, this Privacy Policy and any dispute arising out of or relating to the App shall be governed by the laws of India, without regard to conflict-of-law rules. Courts in India shall have exclusive jurisdiction, subject to any non-waivable consumer rights that apply in your place of residence.
+    </p>
+
+    <h2>15. Contact</h2>
+    <p><strong>Inexer privacy / support</strong></p>
+    <p>
+        Email: <a href="mailto:hariprasadragupathy@gmail.com">hariprasadragupathy@gmail.com</a>
+    </p>
+
+    <footer>
+        Inexer · Privacy Policy
+    </footer>
+</main>
+</body>
+</html>
