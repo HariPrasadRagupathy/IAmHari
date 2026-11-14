@@ -1,6 +1,3 @@
-rootProject.name = "IAmHari"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
     repositories {
         google {
@@ -13,6 +10,10 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+}
+
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
 dependencyResolutionManagement {
@@ -28,6 +29,10 @@ dependencyResolutionManagement {
     }
 }
 
+rootProject.name = "IAmHari"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":composeApp")
+include(":androidApp")
 include(":server")
 include(":shared")

@@ -5,3 +5,21 @@ html, body {
     padding: 0;
     overflow: hidden;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#composeTarget {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+#composeTarget > canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    outline: none;
+}

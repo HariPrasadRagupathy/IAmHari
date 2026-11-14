@@ -46,9 +46,9 @@ fun ContactCandidate() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Find My", style = MaterialTheme.typography.bodyLarge)
+        Text("Let's", style = MaterialTheme.typography.bodyLarge)
         Text(
-            "Contact",
+            "Connect",
             style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.Bold)
 
         )
@@ -71,7 +71,7 @@ class ContactCandidateResponsive() : ResponsiveComponent<ContactCandidateRespons
     @Composable
     override fun getStyle(screenSize: ScreenSize): Style = when (screenSize) {
         ScreenSize.Compact -> Style(contactSectionVisibility = false, menuHorizontalPadding = 20.dp)
-        ScreenSize.Medium -> Style(contactSectionVisibility = false, menuHorizontalPadding = 50.dp, menuVerticalPadding = 100.dp)
+        ScreenSize.Medium -> Style(contactSectionVisibility = false, menuHorizontalPadding = 50.dp, menuVerticalPadding = 30.dp)
         ScreenSize.Expanded -> Style(contactSectionVisibility = true, menuVerticalPadding = 100.dp)
     }
 
@@ -85,9 +85,9 @@ class ContactCandidateResponsive() : ResponsiveComponent<ContactCandidateRespons
 
     @Composable
     override fun Medium(style: Style) {
-        Column(modifier = Modifier.padding(vertical = style.menuVerticalPadding)) {
-            Column(modifier = Modifier.weight(0.5f)) { ContactText() }
-            Column(modifier = Modifier.weight(0.5f)) { AboutCandidateDetails() }
+        Column(modifier = Modifier.padding(horizontal = style.menuHorizontalPadding, vertical = style.menuVerticalPadding)) {
+            ContactText()
+            AboutCandidateDetails()
         }
     }
 
@@ -105,13 +105,7 @@ class ContactCandidateResponsive() : ResponsiveComponent<ContactCandidateRespons
 @Composable
 private fun ContactText() {
     Column(modifier = Modifier.padding(horizontal = 30.dp)) {
-        Text(
-            "Let Us Connect",
-            style = MaterialTheme.typography.displayMedium.copy(
-                fontWeight = FontWeight.Bold
-            )
-        )
-        Spacer(modifier = Modifier.height(30.dp))
+
         Text(
             "\"I'm always open to working on new projects and design challenges. Feel free to share as many details as you can so we can start off strong. Kindly reach out if you're interested in collaborating!\"\n" +
                     "\n",

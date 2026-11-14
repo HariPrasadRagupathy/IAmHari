@@ -13,10 +13,11 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
-import org.jetbrains.compose.resources.Font
-import iamhari.composeapp.generated.resources.poppins
 import iamhari.composeapp.generated.resources.Res
-import iamhari.composeapp.generated.resources.*
+import iamhari.composeapp.generated.resources.Poppins_Bold
+import iamhari.composeapp.generated.resources.Poppins_Medium
+import iamhari.composeapp.generated.resources.Poppins_Regular
+import iamhari.composeapp.generated.resources.Poppins_Thin
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font
 

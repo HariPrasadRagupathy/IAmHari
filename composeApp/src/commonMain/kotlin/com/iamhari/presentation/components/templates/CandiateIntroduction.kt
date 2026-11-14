@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -52,6 +53,7 @@ import com.iamhari.presentation.components.templates.CandidateScreen.CandidateSt
 import com.iamhari.presentation.core.ResponsiveComponent
 import com.iamhari.presentation.core.ScreenStyle
 import com.iamhari.theme.AppFonts
+import com.iamhari.utiities.openUrl
 import iamhari.composeapp.generated.resources.Res
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -87,6 +89,7 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     data class CandidateDetailsStyle(
         val padding: Dp=10.dp,
         val nameTextStyle : TextStyle,
+        val designationTextStyle : TextStyle,
         val horizontalAlignment: Alignment.Horizontal,
         val textAlign: TextAlign = TextAlign.End
     ): ScreenStyle
@@ -95,16 +98,19 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
     override fun getStyle(screenSize: ScreenSize): CandidateDetailsStyle = when(screenSize){
         ScreenSize.Compact -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            designationTextStyle = MaterialTheme.typography.headlineMedium.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.CenterHorizontally,
             textAlign = TextAlign.Center
         )
         ScreenSize.Medium -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.titleLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.CenterHorizontally,
+            designationTextStyle = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             textAlign = TextAlign.Center
         )
         ScreenSize.Expanded -> CandidateDetailsStyle(
             nameTextStyle = MaterialTheme.typography.displayLarge.copy(fontFamily = AppFonts.PoppinsFontFamily()),
+            designationTextStyle = MaterialTheme.typography.displaySmall.copy(fontFamily = AppFonts.PoppinsFontFamily()),
             horizontalAlignment = Alignment.End
         )
     }
@@ -147,7 +153,9 @@ class CandidateDetailsRoot(val onContactClick: () -> Unit = {}) : ResponsiveComp
             Column(verticalArrangement = Arrangement.spacedBy(10.dp), horizontalAlignment = Alignment.CenterHorizontally)  {
                 OutlinedButton(
                     border = BorderStroke(1.dp, Color.White),
-                    onClick = {},
+                    onClick = {
+                        openUrl("files/Hari_Prasad_Ragupathy_-_Senior_Android_Developer.pdf")
+                    },
                     colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White)
                 ) { Text("Download CV") }
                 Button(
@@ -329,6 +337,7 @@ class CandidateScreen(
         Column(
             Modifier.fillMaxSize().background(style.backgroundColor)
                 .padding(vertical = style.verticalPadding, horizontal = style.horizontalPadding),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CandidateImage()
             Spacer(Modifier.height(style.spacing))

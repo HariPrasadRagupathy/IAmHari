@@ -59,44 +59,44 @@ object StaticData {
             projectName = "App / Component Development",
             clientName = "Jio",
             shortDescription = "Design System for Applications",
-            imageUrl = "drawable/projects/projectShowcase1.jpg",
+            imageUrl = "files/projects/projectShowcase1.jpg",
             techStack = listOf("Kotlin", "Jetpack Compose", "Git")
         ),
         ProjectWorked(
             projectName = "App Development",
             clientName = "Clearone",
             shortDescription = "Remote Controller for Video App",
-            imageUrl = "drawable/projects/projectShowcase2.jpg",
+            imageUrl = "files/projects/projectShowcase2.jpg",
             techStack = listOf("Kotlin", "Jetpack Compose", "Git")
         ),
         ProjectWorked(
             projectName = "App Development",
             clientName = "Geodexia",
             shortDescription = "Share Resource Contact App",
-            imageUrl = "drawable/projects/projectShowcase3.jpg",
+            imageUrl = "files/projects/projectShowcase3.jpg",
             techStack = listOf("Kotlin", "Jetpack Compose", "Git")
         ),
         ProjectWorked(
             projectName = "App/Web Development",
             clientName = "Self",
             shortDescription = "Portfolio Application for Individual",
-            imageUrl = "drawable/projects/projectShowcase4.jpg",
+            imageUrl = "files/projects/projectShowcase4.jpg",
             techStack = listOf("Kotlin", "Jetpack Compose", "Git")
         ),
 
     )
 
     val skills = listOf(
-        Skill("Kotlin", "drawable/skills/kotlin.png"),
-        Skill("Jetpack Compose", "drawable/skills/jetpack_compose.png"),
-        Skill("Kotlin Multiplatform", "drawable/skills/kmp.png"),
-        Skill("Compose Multiplatform", "drawable/skills/cmp.png"),
-        Skill("Native Android", "drawable/skills/android.png"),
-        Skill("Ktor", "drawable/skills/ktor.png"),
-        Skill("Flutter", "drawable/skills/flutter.png"),
-        Skill("Dart", "drawable/skills/dart.jpeg"),
-        Skill("Git", "drawable/skills/git.png"),
-        Skill("GitHub", "drawable/skills/github.jpeg"),
+        Skill("Kotlin", "files/skills/kotlin.png"),
+        Skill("Jetpack Compose", "files/skills/jetpack_compose.png"),
+        Skill("Kotlin Multiplatform", "files/skills/kmp.png"),
+        Skill("Compose Multiplatform", "files/skills/cmp.png"),
+        Skill("Native Android", "files/skills/android.png"),
+        Skill("Ktor", "files/skills/ktor.png"),
+        Skill("Flutter", "files/skills/flutter.png"),
+        Skill("Dart", "files/skills/dart.jpeg"),
+        Skill("Git", "files/skills/git.png"),
+        Skill("GitHub", "files/skills/github.jpeg"),
 
         )
 
